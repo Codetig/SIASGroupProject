@@ -1,9 +1,43 @@
 Rails.application.routes.draw do
-  root 'buckets#index'
+  get 'sites/index'
 
-  get 'buckets/index'
+  root 'sites#index'
 
-  get 'buckets/show'
+ resources :users do
+  resources :buckets, shallow: true do
+    resources :tracks, shallow: true 
+  end
+end
+
+=begin
+Prefix Verb   URI Pattern                              Controller#Action
+     sites_index GET    /sites/index(.:format)                   sites#index
+            root GET    /                                        sites#index
+   bucket_tracks GET    /buckets/:bucket_id/tracks(.:format)     tracks#index
+                 POST   /buckets/:bucket_id/tracks(.:format)     tracks#create
+new_bucket_track GET    /buckets/:bucket_id/tracks/new(.:format) tracks#new
+      edit_track GET    /tracks/:id/edit(.:format)               tracks#edit
+           track GET    /tracks/:id(.:format)                    tracks#show
+                 PATCH  /tracks/:id(.:format)                    tracks#update
+                 PUT    /tracks/:id(.:format)                    tracks#update
+                 DELETE /tracks/:id(.:format)                    tracks#destroy
+    user_buckets GET    /users/:user_id/buckets(.:format)        buckets#index
+                 POST   /users/:user_id/buckets(.:format)        buckets#create
+ new_user_bucket GET    /users/:user_id/buckets/new(.:format)    buckets#new
+     edit_bucket GET    /buckets/:id/edit(.:format)              buckets#edit
+          bucket GET    /buckets/:id(.:format)                   buckets#show
+                 PATCH  /buckets/:id(.:format)                   buckets#update
+                 PUT    /buckets/:id(.:format)                   buckets#update
+                 DELETE /buckets/:id(.:format)                   buckets#destroy
+           users GET    /users(.:format)                         users#index
+                 POST   /users(.:format)                         users#create
+        new_user GET    /users/new(.:format)                     users#new
+       edit_user GET    /users/:id/edit(.:format)                users#edit
+            user GET    /users/:id(.:format)                     users#show
+                 PATCH  /users/:id(.:format)                     users#update
+                 PUT    /users/:id(.:format)                     users#update
+                 DELETE /users/:id(.:format)                     users#destroy
+=end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
