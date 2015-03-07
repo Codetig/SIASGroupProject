@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
-  root 'buckets#index'
+  get 'sites/index'
 
-  get 'buckets/index'
+  root 'sites#index'
 
-  get 'buckets/show'
+ resources :users do
+  resources :buckets, shallow: true do
+    resources :tracks, shallow: true 
+  end
+end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
