@@ -1,10 +1,9 @@
 <nav class="navbar navbar-default navbar-right navbar-fixed-top">
-  <div class="container">
+  <div class="container-fluid">
     <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Home</a></li>|
-        <li><a href="#">Our story</a></li>|
-        <li><%= link_to "hi" + @user.first_name %></a></li>
-        <li><%= link_to "Log out!", logout_path %></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Our story</a></li>
+        
     </ul>
   </div>
 </nav>
@@ -17,7 +16,7 @@
 <% @buckets.each do |bucket| %>
   <div class="row">
 
-    <div class="col-sm-3 thumbnail bucketbox">bucket.name</div>
+    <div class="col-sm-3 thumbnail bucketbox text-center"><%= link_to bucket.name, bucket_path(bucket) %></div>
  
   </div>
     <% end %>

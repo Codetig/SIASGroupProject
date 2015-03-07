@@ -1,5 +1,11 @@
 .bucketbox {
   background-color: grey;
   height: 200px ;
-  padding: 10%
+  display: inline-block;
+  font-size: 30px;
+  font-color: white;
+}
+
+a:link {
+    color: white;
 }
