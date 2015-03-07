@@ -17,6 +17,24 @@ class BucketsController < ApplicationController
   end
 
   def show
+    #Sue's work is in this action
+  end
+
+  def create
+    @bucket = Bucket.new bucket_params
+    @user = User.find(params[:user_id])
+    @bucket.user = @user
+    if @bucket.save
+      redirect_to :back, notice: "New bucket created"
+    else
+      redirect_to :back, notice: "No bucket was created: A bucket must have a name"
+    end
+  end
+
+  def destroy
+    bucket = Bucket.find(params[:id])
+    bucket.destroy
+    redirect_to :back, notice: "#{bucket.name} Bucket deleted"
   end
 
 private
