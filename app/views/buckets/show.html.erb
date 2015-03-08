@@ -1,8 +1,5 @@
 <h1>Buckets#show</h1>
 <p>Find me in app/views/buckets/show.html.erb</p>
-
-
-
 <h3><%= @bucket.name %></h3>
 
 <div id="tracks">
@@ -16,9 +13,6 @@
 
 <br><br>
 
-
-
-
 <div id="search">
 <%= form_tag bucket_tracks_path(@bucket), method: "post" do %>
   <%= text_field_tag :searchTerm, nil, placeholder: "Search for a song", autofocus: true %>
@@ -27,4 +21,3 @@
 </div>
 <br>
 <div id="results"><ul></ul></div>
-
