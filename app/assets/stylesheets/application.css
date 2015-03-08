@@ -7,8 +7,8 @@
   opacity: 30%;
   border: 2px solid white;
   border-radius: 20px;
-<<<<<<< HEAD
-  margin-right: 15px
+  margin-right: 15px;
+  margin-top: 60px
 }
 
 .bucketboxend {
@@ -20,8 +20,7 @@
   opacity: 30%;
   border: 2px solid white;
   border-radius: 20px;
-=======
->>>>>>> 1ae4012c13102661704ea85dda7065edd2acae41
+
 }
 
 .bucketbox:hover {
@@ -58,7 +57,7 @@ body {
 
 }
 
-#add-link {
+.add-link {
   margin: 0;
   font-size: 80px;
 }
