@@ -3,7 +3,7 @@ class TracksController < ApplicationController
 
   def create
     #tr_info = {}
-    @track = Track.new(track_params) #ife-changed this from prams[:tracks]
+    @track = Track.find_by(spotify_track_id: params[:track][:spotify_track_id]) || Track.new(track_params) #ife-changed this from prams[:tracks]
     @bucket = Bucket.find(params[:bucket_id])
     @track.buckets << @bucket  #adding track to associated bucket
     # binding.pry

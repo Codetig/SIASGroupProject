@@ -33,8 +33,6 @@ $(document).ready(function () {
     var artist = $(this).parent().find($('.tr-artist')).text();
   
     var postData = spResult[title+artist];
-    console.log(postData);
-    console.log(harry);
     $.ajax({
       url : formURL,
       type: "POST",
