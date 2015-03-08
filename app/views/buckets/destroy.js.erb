@@ -1,0 +1,15 @@
+/*
+<a href="#" id="addTrack"><span class='glyphicon glyphicon-plus' aria-hidden='true'></span></a>
+$("addTrack").click(function(event){
+  event.preventDefault();
+  this.hide();
+})
+*/
+
+$(document).ready(function () {
+console.log('working???');
+
+$('.delete_track').bind('ajax:success', function() {  
+        $(this).fadeOut();
+});
+});

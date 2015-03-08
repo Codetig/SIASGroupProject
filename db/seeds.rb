@@ -30,8 +30,11 @@ aparna.buckets << workout
 shilpa.buckets << sleepy 
 sue.buckets << workout 
 
+
 happy.tracks << yesterday
 happy.tracks << younger 
+happy.tracks << just 
+
 sad.tracks << just 
 workout.tracks << younger
 workout.tracks << just 
