@@ -3,7 +3,7 @@
 <nav class="navbar navbar-default navbar-right navbar-fixed-top">
   <div class="container-fluid" id = "image">
   <h1 id ="logo">MusicBucket</h1>
-    <ul class="nav navbar-nav navbar-right">
+    <ul id='head-links' class="nav navbar-nav navbar-right">
         <li><a href="#">Home</a></li>
         <li><a href="#">Our story</a></li>
         <li><%= link_to "Log in!", root_path %></li>
@@ -12,7 +12,7 @@
 </nav>
 </header>
 
-<!-- <h1>< %= @user.first_name %>'s Music Buckets </h1> -->
+<h2><%= @user.first_name %>'s Music Buckets</h2>
 <div class="container">
 
   <div class="row">
