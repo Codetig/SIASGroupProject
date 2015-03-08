@@ -1,11 +1,43 @@
 .bucketbox {
-  background-color: grey;
-  height: 200px ;
-  display: inline-block;
+ background-color: transparent;
+  height: 220px ;
   font-size: 30px;
   font-color: white;
+  display: inline-block;
+  opacity: 30%;
+  border: 2px solid white;
+  border-radius: 20px
+}
+
+.bucketbox:hover {
+ background-color: rgba(255,255,255,0.4)
 }
 
 a:link {
     color: white;
+}
+
+#logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 50px;
+}
+
+body {
+  background-image: url("black-music_00423838.jpg");
+  background-color: rgba(255,255,255,0.4);
+  background-repeat: no-repeat;
+}
+
+.story {
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 30px;
+  color: white
+
+}
+
+.title {
+  font-size: 20px;
+  color: white;
+  padding-top: 70%
+
 }
