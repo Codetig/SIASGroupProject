@@ -16,14 +16,37 @@
 <div class="container">
 
   <div class="row">
-
+    <div id="add-form">
+      <%= form_for Bucket.new, :url => user_buckets_path(@user) do |f| %>
+       <p><%= f.label :name %>: <%= f.text_field :name %> </p>
+       <p><%= f.label :desc, "Description" %>: <%= f.text_area :desc %></p>
+       <%= f.submit "Add Bucket" %>
+       <% end %>
+    </div>
+ 
     <div class="col-sm-3 thumbnail bucketbox text-center"><span class="add-link"><%= link_to "+", user_buckets_path(@user) %></span></div>
 
     <% @buckets.each do |bucket| %>
-    <div class="col-sm-3 thumbnail bucketbox text-center"><%= link_to bucket.name, bucket_path(bucket) %></div>
+    <% @bucky = bucket %>
+    <div class="col-sm-3 thumbnail bucketbox text-center"><%= link_to bucket.name, bucket_path(bucket) %> <%= button_to "X", bucket_path(bucket), :method => :delete %> <span class="edit-link"><%= link_to "Edit", user_buckets_path(@user) %></span></div>
     <% end %>
-   
+
+    <div id="edit-form">
+      <%= form_for @bucky, :url => bucket_path(@bucky), method: "PUT" do |f| %>
+     <p><%= f.label :name %>: <%= f.text_field :name %> </p>
+     <p><%= f.label :desc, "Description" %>: <%= f.text_area :desc %></p>
+     <%= f.submit "Update Bucket" %>
+     <% end %>
+    </div>
 
   </div>
     
  </div>
+
+
+
+
+
+
+
+
