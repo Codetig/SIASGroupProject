@@ -3,11 +3,13 @@
 <h3><%= @bucket.name %></h3>
 
 <div id="tracks">
+    <% if @tracks.any? %>
     <% @tracks.each do |track| %>
     <%= div_for track do %>
-      <%=  track.id %> <%=  track.title %> <%=  track.artist %>
-            <%= link_to 'Destroy', bucket_track_path(@bucket,track), method: :delete, data: { confirm: 'Are you sure?' }, :remote => true, :class => 'delete_track' %> 
+      <p><%=  track.id %> <%=  track.title %> by <%=  track.artist %>
+            <%= link_to 'Delete', track_path(track), method: :delete, data: { confirm: 'Are you sure?' }, :remote => true, :class => 'delete_track' %></p>
     <% end %>
+  <% end %>
   <% end %>
 </div>
 
