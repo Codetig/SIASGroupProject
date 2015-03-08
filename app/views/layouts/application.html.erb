@@ -13,9 +13,44 @@
 
 <link href= 'http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 <link href= 'http://fonts.googleapis.com/css?family=Ubuntu:500italic' rel='stylesheet' type='text/css'>
-  
+
+<!-- I don't really understand what is going on here, but the title is too specific for this file
+=======
+  <title>Music Buckets</title>
+  < %= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  < %= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  < %= csrf_meta_tags %>
+  <link href="/assets/favicon.ico" rel="shortcut icon" />
+>>>>>>> 3bcfa056226c69a525f0b346c61da286779006f6 -->
 </head>
-<body>
+<body class="container">
+<br>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        PLACE HOLDER
+      </a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+          Logout | Login
+       
+      </li>
+    </ul>    
+  </div>
+</nav>
+  <div class="container-fluid">
+    <% flash.each do |key, value| %>
+      <% if key == "notice" %>
+        <%= content_tag :div, value, class: "text-center alert alert-warning" %>
+      <% elsif key == "alert" %>
+        <%= content_tag :div, value, class: "text-center alert alert-danger" %>
+      <% else %>
+        <%= content_tag :div, value, class: "text-center alert alert-success" %>
+      <% end %>
+    <% end %>
+  </div>
 
 <%= yield %>
 

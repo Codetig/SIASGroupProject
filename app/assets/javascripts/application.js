@@ -11,9 +11,11 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
+//= require jquery_ujs  
 //= require turbolinks
+//= require bootstrap-sprockets
 //= require_tree .
+
 
 $(document).ready(function(){
   $('#add-form').fadeOut(0);
@@ -32,3 +34,7 @@ $(document).ready(function(){
   }); //end of add-link click
 
 });
+
+//= require tracks
+
+

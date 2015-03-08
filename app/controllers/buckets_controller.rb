@@ -15,10 +15,29 @@ class BucketsController < ApplicationController
       redirect_to :back, notice: "Invalid name or description entry"
     end
   end
+#Sue's work on show is below(from merge)
+    def show
+    @bucket = Bucket.find params[:id]
+    @tracks = @bucket.tracks
 
-  def show
-    #Sue's work is in this action
-  end
+    # if params.key? :search_term
+    #   request = Typhoeus::Request.new(
+    #     "https://api.spotify.com/v1/search?q="+params[:search_term].to_s+"&type=track,artist&market=US"
+    #     # ,
+    #     # method: :get,
+    #     # params: {q: params[:search_term]}
+    #   )
+    #   request.run
+    #   @search_results = JSON.parse(request.response.body)
+    #   # binding.pry
+    # end
+
+    # respond_to do |format|
+    #   format.html # index.html.erb
+    #   format.json {render :json => @search_results}
+    # end
+    # @search_results
+    end
 
   def create
     @bucket = Bucket.new bucket_params

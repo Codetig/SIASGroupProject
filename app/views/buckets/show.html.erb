@@ -1,2 +1,23 @@
 <h1>Buckets#show</h1>
 <p>Find me in app/views/buckets/show.html.erb</p>
+<h3><%= @bucket.name %></h3>
+
+<div id="tracks">
+    <% @tracks.each do |track| %>
+    <%= div_for track do %>
+      <%=  track.id %> <%=  track.title %> <%=  track.artist %>
+            <%= link_to 'Destroy', bucket_track_path(@bucket,track), method: :delete, data: { confirm: 'Are you sure?' }, :remote => true, :class => 'delete_track' %> 
+    <% end %>
+  <% end %>
+</div>
+
+<br><br>
+
+<div id="search">
+<%= form_tag bucket_tracks_path(@bucket), method: "post" do %>
+  <%= text_field_tag :searchTerm, nil, placeholder: "Search for a song", autofocus: true %>
+  <%= submit_tag "Search" %>
+<% end %>
+</div>
+<br>
+<div id="results"><ul></ul></div>
