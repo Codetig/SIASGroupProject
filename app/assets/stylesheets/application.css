@@ -7,6 +7,7 @@
   opacity: 30%;
   border: 2px solid white;
   border-radius: 20px;
+<<<<<<< HEAD
   margin-right: 15px
 }
 
@@ -19,10 +20,12 @@
   opacity: 30%;
   border: 2px solid white;
   border-radius: 20px;
+=======
+>>>>>>> 1ae4012c13102661704ea85dda7065edd2acae41
 }
 
 .bucketbox:hover {
- background-color: rgba(255,255,255,0.4)
+ background-color: rgba(255,255,255,0.4);
 }
 
 a:link {
@@ -44,13 +47,31 @@ body {
   font-family: 'Ubuntu', sans-serif;
   font-style: italic;
   font-size: 30px;
-  color: white
+  color: white;
 
 }
 
 .title {
   font-size: 20px;
   color: white;
-  padding-top: 70%
+  padding-top: 70%;
 
+}
+
+#add-link {
+  margin: 0;
+  font-size: 80px;
+}
+
+#head-links {
+  margin: 0 20px 0 0;
+}
+
+header h2 {
+  margin: 12px 0 0 8px;
+  display: inline-block;
+}
+
+header {
+  margin: 0 0 90px 0;
 }

@@ -1,1 +1,29 @@
 
+<header>
+<nav class="navbar navbar-default navbar-right navbar-fixed-top">
+  <div class="container-fluid">
+    <h2><%= @user.first_name %>'s Music Buckets</h2>
+    <ul id="head-links" class="nav navbar-nav navbar-right">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Our story</a></li>
+        
+    </ul>
+  </div>
+</nav>
+</header>
+
+<!-- <h1>< %= @user.first_name %>'s Music Buckets </h1> -->
+<div class="container">
+
+  <div class="row">
+    <% @buckets.each do |bucket| %>
+    <div class="col-sm-3 col-sm-offset-1 thumbnail bucketbox text-center"><%= link_to bucket.name, bucket_path(bucket) %></div>
+
+    <!-- <div class="col-sm-3 thumbnail bucketbox text-center">< %= link_to bucket.name, bucket_path(bucket) %></div>
+
+    <div class="col-sm-3 thumbnail bucketbox text-center">< %= link_to bucket.name, bucket_path(bucket) %></div> -->
+    <% end %>
+    <div class="col-sm-3 col-sm-offset-1 thumbnail bucketbox text-center"><span id="add-link"><%= link_to "+", user_buckets_path(@user) %></span></div>
+  </div>
+    
+ </div>
