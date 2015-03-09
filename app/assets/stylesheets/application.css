@@ -37,7 +37,7 @@ a:link {
 }
 
 body {
-  background-image: url("https://files.slack.com/files-pri/T0351JZQ0-F03UVJ3P7/vinyl_turntable_record_.jpg");
+  background-image: url("http://www.thenerd411.com/wp-content/uploads/2014/12/Small-Black-Hexagon-Pattern-Wallpaper-1.jpg");
   background-color: rgba(255,255,255,0.4);
   background-size: cover;
   background-repeat: no-repeat;
@@ -112,6 +112,13 @@ body {
 }
 
 .edit-form {
+  background-color: rgba(0,0,0,0.7);
+  font-size: 15px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+#add-form {
   background-color: rgba(0,0,0,0.7);
   font-size: 15px;
   border-radius: 10px;
