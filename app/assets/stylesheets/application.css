@@ -8,7 +8,7 @@
   border: 2px solid white;
   border-radius: 20px;
   margin-right: 15px;
-  margin-top: 60px
+  margin-top: 30px
 }
 
 .bucketboxend {
@@ -46,9 +46,53 @@ body {
 .story {
   font-family: 'Ubuntu', sans-serif;
   font-style: italic;
-  font-size: 30px;
+  font-size: 25px;
   color: white;
 
+}
+
+.overlay
+ {
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background-color: transparent;
+     z-index: 10000;
+     display: inline-block;
+ }
+
+ .form{
+  background-color: transparent;
+  font-size:16px;
+  border-bottom:1px dotted #fff;
+  border-radius:0;
+  
+}
+
+.edit {
+  font-size: 16px;
+  color: white;
+
+}
+
+.btn.outline {
+    background: none;
+    padding: 12px 22px;
+}
+.btn-primary.outline {
+    border: 2px solid #0099cc;
+    color: #0099cc;
+}
+.btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
+    color: #33a6cc;
+    border-color: #33a6cc;
+}
+.btn-primary.outline:active, .btn-primary.outline.active {
+    border-color: #007299;
+    color: #007299;
+    box-shadow: none;
 }
 
 .title {
@@ -72,6 +116,11 @@ body {
   font-size: 15px;
   border-radius: 10px;
   margin-top: 10px;
+}
+
+.nav{
+  font-size: 20px;
+  margin-right: 10px;
 }
 
 header h2 {
