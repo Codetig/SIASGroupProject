@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   resources :buckets, shallow: true do
     resources :tracks, shallow: true 
   end
-end
+ end
+
+ delete 'buckets/:bucket_id/tracks/:id' => 'tracks#destroy', as: :track_destroy
 end
   
 # commenting this out so that we are all using the sam routes

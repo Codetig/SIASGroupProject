@@ -40,7 +40,6 @@ $(document).ready(function () {
       success:function(data, textStatus, jqXHR) 
       {
         location.reload();
-        console.log("It worked!");
           //data: return data from server
           // data
       }
@@ -48,24 +47,26 @@ $(document).ready(function () {
     $('#results ul').empty();    
   });
 
-  //Sue's original list listener
-  // $('li').click('#create_track',function (event) { 
-  //   event.preventDefault(); 
-  //   var formURL = $("form").attr("action");
-  //   //var index = spResult.indexOf($('#tr-title').text());
-  //   var postData = spResult[$('#tr-title').text()];
-  //   console.log(postData);
+  // //Ife's changed listener/modified by Sue
+  // $('#results ul').on('click', '.create_track',function (e) { 
+  //   e.preventDefault(); 
+  //   var formURL = $("#search form").attr("action");
+  //   var title = $(this).parent().find($('.tr-title')).text();
+  //   var artist = $(this).parent().find($('.tr-artist')).text();
+  
+  //   var postData = spResult[title+artist];
   //   $.ajax({
   //     url : formURL,
   //     type: "POST",
-  //     data : postData,
+  //     data : {track: {spotify_track_id: postData.id, title: postData.name, track_uri: postData.uri, artist: postData.artists[0].name}},
   //     success:function(data, textStatus, jqXHR) 
   //     {
   //         //data: return data from server
   //         // data
   //     }
   //      });
-  //   $(this).fadeOut();    
+  //   $(this).parent().fadeOut(); 
+   
   // });
 
 });
