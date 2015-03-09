@@ -3,7 +3,7 @@ class BucketsController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-    @buckets = @user.buckets
+    @buckets = @user.buckets.order(name: :asc)
   end
 
   def update

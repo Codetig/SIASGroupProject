@@ -67,6 +67,13 @@ body {
   margin: 0 20px 0 0;
 }
 
+.edit-form {
+  background-color: white;
+  font-size: 15px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
 header h2 {
   margin: 12px 0 0 8px;
   display: inline-block;
