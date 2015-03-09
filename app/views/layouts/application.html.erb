@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SIASGroupProject</title>
+  <title>Music Buckets</title>
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   
@@ -13,9 +13,23 @@
 
 <link href= 'http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 <link href= 'http://fonts.googleapis.com/css?family=Ubuntu:500italic' rel='stylesheet' type='text/css'>
-  
+<link href="/assets/favicon.ico" rel="shortcut icon" />
 </head>
-<body>
+<body class="container">
+<br>
+<% if flash != nil %>
+  <div class="container-fluid">
+    <% flash.each do |key, value| %>
+      <% if key == "notice" %>
+        <%= content_tag :div, value, class: "text-center alert alert-warning" %>
+      <% elsif key == "alert" %>
+        <%= content_tag :div, value, class: "text-center alert alert-danger" %>
+      <% else %>
+        <%= content_tag :div, value, class: "text-center alert alert-success" %>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
 
 <div id="user_nav">
   <% if current_user %>
