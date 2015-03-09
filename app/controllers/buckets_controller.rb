@@ -2,7 +2,7 @@ class BucketsController < ApplicationController
   # before_action :check_login
 
   def index
-    @user = User.find(params[:user_id])
+    @user = User.find(9)
     @buckets = @user.buckets
   end
 

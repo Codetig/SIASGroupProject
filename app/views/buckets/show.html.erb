@@ -1,3 +1,4 @@
+<div style ='background-color:#fff;'>
 <h1>Buckets#show</h1>
 <p>Find me in app/views/buckets/show.html.erb</p>
 <h3><%= @bucket.name %></h3>
@@ -7,7 +8,7 @@
     <% @tracks.each do |track| %>
     <%= div_for track do %>
       <p><%=  track.id %> <%=  track.title %> by <%=  track.artist %>
-            <%= link_to 'Delete', track_path(track), method: :delete, data: { confirm: 'Are you sure?' }, :remote => true, :class => 'delete_track' %></p>
+            <%= link_to 'Delete', track_destroy_path(@bucket,track), method: :delete, data: { confirm: 'Are you sure?' }, :remote => true, :class => 'delete_track' %></p>
     <% end %>
   <% end %>
   <% end %>
@@ -23,3 +24,4 @@
 </div>
 <br>
 <div id="results"><ul></ul></div>
+</div>

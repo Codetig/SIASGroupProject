@@ -15,7 +15,7 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
-
+//= require tracks
 
 $(document).ready(function(){
   $('#add-form').fadeOut(0);
@@ -33,8 +33,21 @@ $(document).ready(function(){
     $('#edit-form').fadeIn(0);
   }); //end of add-link click
 
+
+
+
+
+  // ---delete_track----
+  $('.delete_track').on('click', function (e) {
+    e.preventDefault();
+    $('.delete_track').bind('ajax:success', function() {  
+
+      $(this).closest('p').fadeOut();
+    });
+
+  });
+
+
+
 });
-
-//= require tracks
-
 
