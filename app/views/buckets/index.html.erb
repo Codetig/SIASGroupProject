@@ -14,20 +14,21 @@
 
 <h2><%= @user.first_name %>'s Music Buckets</h2>
 <div class="container">
+  <div class="col-sm-11 col-sm-offset-1 ">
 
   <div class="row">
 
 
-    <div class="col-sm-3 col-sm-offset-1 thumbnail bucketbox text-center"><span class="add-link"><%= link_to "+", user_buckets_path(@user) %></span></div>
+    <div class="col-sm-3 thumbnail bucketbox text-center"><span class="add-link"><%= link_to "+", user_buckets_path(@user) %></span>
 
-    <div id="add-form">
+    <div id="add-form" class="overlay">
       <%= form_for Bucket.new, :url => user_buckets_path(@user) do |f| %>
        <p><%= f.label :name %>: <%= f.text_field :name %> </p>
        <p><%= f.label :desc, "Description" %>: <%= f.text_area :desc %></p>
        <%= f.submit "Add Bucket" %>
        <% end %>
     </div>
-
+    </div>
 
     <% @buckets.each do |bucket| %>
     <div class="col-sm-3 thumbnail bucketbox text-center"><%= link_to bucket.name, bucket_path(bucket) %> <br><small><%= link_to "Edit |", user_buckets_path(@user), class: "edit" %>  <%= link_to " Delete", bucket_path(bucket), :method => :delete, data: { confirm: "Delete #{bucket.name}; are you sure?" }, class: "edit" %></small>
@@ -40,6 +41,7 @@
     </div>
     </div>
     <% end %>
+    </div>
 
   </div>
     
