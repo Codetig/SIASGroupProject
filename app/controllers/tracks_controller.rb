@@ -37,7 +37,7 @@ class TracksController < ApplicationController
     @track = Track.find(params[:id])
     @track.destroy
     respond_to do |format|
-      format.html { redirect_to bucket_url }
+      format.html { redirect_to bucket_url, notice: "Successfully destroyed post." }
       format.json { head :no_content }
       # format.js   { render :layout => false }
 
