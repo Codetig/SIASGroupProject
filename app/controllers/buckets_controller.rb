@@ -2,7 +2,6 @@ class BucketsController < ApplicationController
   # before_action :check_login
   before_filter :require_user
   def index
-    binding.pry
     @user = User.find(params[:user_id])
     @buckets = @user.buckets.order(name: :asc)
   end
