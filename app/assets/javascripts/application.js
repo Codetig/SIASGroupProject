@@ -12,10 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs  
-//= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
-//= require tracks
 
 $(document).ready(function(){
   $('#add-form').fadeOut(0);

@@ -5,6 +5,8 @@ $(document).ready(function () {
 //variable to store spotify result and track titles
   var spResult ={};
 
+
+
  $("#search form").on("submit", function (event) {
    event.preventDefault();
    $('#results ul').empty();  //this clears out old search results
@@ -17,7 +19,7 @@ $(document).ready(function () {
         var preview = data.tracks.items[i].preview_url;
         spResult[title+artist] = data.tracks.items[i];
         
-        resultList.append("<li><span class='tr-title'><b>" + title + "</b></span> - " + "<span class='tr-artist'>" + artist + "</span> <a href="+ preview + ">Preview</a>  <a href='' class='create_track'  remote = 'true'><span class='glyphicon glyphicon-plus' aria-hidden='true'></span></a></li>");
+        resultList.append("<li class='list-group-item'><span class='tr-title'><b>" + title + "</b></span> - " + "<span class='tr-artist'>" + artist + "</span> <a href="+ preview + ">Preview</a>  <a href='' class='create_track'  remote = 'true'><span class='glyphicon glyphicon-plus' aria-hidden='true'></span></a></li>");
         //removed on click listener on <li>s from here -Ife
         // resultList = resultList.append("<iframe src=\"https://embed.spotify.com/?uri=" + data.tracks.items[i].uri+"\" width=\"300\" height=\"380\" frameborder=\"0\" allowtransparency=\"true\"></iframe>");
       }
@@ -27,11 +29,12 @@ $(document).ready(function () {
   //Ife's changed listener
   $('#results ul').on('click', '.create_track',function (e) { 
     e.preventDefault(); 
-    var formURL = $("#search form").attr("action");
+    var formURL = $("#search").attr("data-url");
+    // console.log(formURL);
     console.log($(this).parent().find($('.tr-title')).text());
     var title = $(this).parent().find($('.tr-title')).text();
     var artist = $(this).parent().find($('.tr-artist')).text();
-  
+    // console.log(harry);
     var postData = spResult[title+artist];
     $.ajax({
       url : formURL,

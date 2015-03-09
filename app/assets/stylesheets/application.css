@@ -111,6 +111,12 @@ body {
   margin: 0 20px 0 0;
 }
 
+#results {
+  height:200px;
+  width: 500px;
+  overflow-y: auto;
+}
+
 .edit-form {
   background-color: white;
   font-size: 15px;

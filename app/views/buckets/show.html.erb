@@ -7,14 +7,14 @@
     <% if @tracks.any? %>
     <% @tracks.each do |track| %>
     <%= div_for track do %>
-      <p><%=  track.id %> <%=  track.title %> by <%=  track.artist %> <%= link_to 'Delete', track_destroy_path(@bucket,track), method: :delete, data: { confirm: 'Are you sure?' }, :remote => true, :class => 'delete_track' %></p>
+      <p><%=  track.id %> <%=  track.title %> by <%=  track.artist %> <%= link_to 'Delete', track_destroy_path(@bucket,track), method: :delete, data: { confirm: 'Are you sure?' }, :class => 'delete_track' %></p>
     <% end %>
   <% end %>
   <% end %>
 </div>
 <br>
-<div id="search">
-<%= form_tag bucket_tracks_path(@bucket), method: "post" do %>
+<div id="search" data-url= <%=bucket_tracks_path(@bucket) %>>
+<%= form_tag "javascript:void(0)", method:"GET" do %>
   <%= text_field_tag :searchTerm, nil, placeholder: "Search for a song", autofocus: true %>
   <%= button_tag(type: 'submit', class: "btn btn-default") do %>
   <span class="glyphicon glyphicon-search"></span> 
@@ -23,5 +23,5 @@
 <% end %>
 </div>
 <br>
-<div id="results"><ul></ul></div>
+<div id="results"><ul class="list-group"></ul></div>
 </div>
