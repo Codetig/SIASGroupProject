@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'sites/index'
 
   root 'sites#index'
 
@@ -11,7 +10,21 @@ Rails.application.routes.draw do
   resources :buckets, shallow: true do
     resources :tracks, shallow: true 
   end
+ end
+
+ delete 'buckets/:bucket_id/tracks/:id' => 'tracks#destroy', as: :track_destroy
 end
+  
+# commenting this out so that we are all using the sam routes
+#JUST FOR NOW
+  # root 'sites#index'
+  # resources :buckets do
+  #   resources :tracks do
+  #   end
+  # end
+# =======
+ #  get 'sites/index'
+
 
 =begin
 Prefix Verb   URI Pattern                              Controller#Action
@@ -42,6 +55,9 @@ new_bucket_track GET    /buckets/:bucket_id/tracks/new(.:format) tracks#new
                  PUT    /users/:id(.:format)                     users#update
                  DELETE /users/:id(.:format)                     users#destroy
 =end
+
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -97,4 +113,21 @@ new_bucket_track GET    /buckets/:bucket_id/tracks/new(.:format) tracks#new
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
+
+
+
+# root_path GET / buckets#index
+
+# buckets_path  GET /buckets(.:format)  buckets#index
+# POST  /buckets(.:format)  buckets#create
+# new_bucket_path GET /buckets/new(.:format)  buckets#new
+# edit_bucket_path  GET /buckets/:id/edit(.:format) buckets#edit
+# bucket_path GET /buckets/:id(.:format)  buckets#show
+# PATCH /buckets/:id(.:format)  buckets#update
+# PUT /buckets/:id(.:format)  buckets#update
+# DELETE  /buckets/:id(.:format)  buckets#destroy
+
+# POST  /buckets/:bucket_id/tracks(.:format)  tracks#create
+# PATCH /buckets/:bucket_id/tracks/:id(.:format)  tracks#update
+# PUT /buckets/:bucket_id/tracks/:id(.:format)  tracks#update
+# DELETE  /buckets/:bucket_id/tracks/:id(.:format)  tracks#destroy
