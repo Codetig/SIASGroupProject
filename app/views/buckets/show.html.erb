@@ -1,3 +1,4 @@
+
 <header>
 <nav class="navbar navbar-default navbar-right navbar-fixed-top">
   <span id ="logo">MusicBucket</span>
@@ -25,6 +26,7 @@
         <hr>
       
         <% @tracks.each do |track| %>
+
         
       <%= counter %>. <%= track.title %> by <%= track.artist %>
       <iframe src="https://embed.spotify.com/?uri=<%= track.track_uri %>" width="380" height="80" frameborder="0" allowtransparency="true"></iframe>
