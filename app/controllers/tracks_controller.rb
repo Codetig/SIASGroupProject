@@ -36,7 +36,7 @@ class TracksController < ApplicationController
     @track = Track.find(params[:id])
     @track.destroy
     respond_to do |format|
-      format.html { redirect_to bucket_url(@bucket), notice: "Successfully destroyed a song." }
+      format.html { redirect_to bucket_url(@bucket), notice: "Successfully deleted a song." }
       format.json { head :no_content }
       format.js   { render :nothing => true }
     end
