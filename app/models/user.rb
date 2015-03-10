@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
       user.provider = auth["provider"]
       user.uid = auth["uid"]
       user.name = auth["info"]["name"]
+      user.first_name = user.name.split(" ")[0]
+      user.first_name = user.name.split(" ")[1]
     end
   end
 

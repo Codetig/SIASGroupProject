@@ -6,6 +6,14 @@ class TracksController < ApplicationController
     @track = Track.find_by(spotify_track_id: params[:track][:spotify_track_id]) || Track.new(track_params) #ife-changed this from prams[:tracks]
     @track.buckets << @bucket  #adding track to associated bucket
     
+    # #IFE's code
+    if @track.save
+      redirect_to @bucket, notice: "#{@track.title} has been added"
+      # binding.pry
+    else
+      redirect_to @bucket, notice: "unable to add #{@track.title}"
+    end
+
     #Sue's code
     # respond_to do |format|
     #   if @track.save
@@ -17,16 +25,7 @@ class TracksController < ApplicationController
     #     format.json
     #   end
     #   format.js
-    #  end
-   
-
-    # #IFE's code
-    if @track.save
-      redirect_to @bucket, notice: "#{@track.title} has been added"
-      # binding.pry
-    else
-      redirect_to @bucket, notice: "unable to add #{@track.title}"
-    end
+    #  end    
   end
 
   #no need to update. need to be deleted? 
@@ -37,10 +36,8 @@ class TracksController < ApplicationController
     @track = Track.find(params[:id])
     @track.destroy
     respond_to do |format|
-      format.html { redirect_to bucket_url, notice: "Successfully destroyed post." }
+      format.html { redirect_to bucket_url(@bucket), notice: "Successfully destroyed a song." }
       format.json { head :no_content }
-      # format.js   { render :layout => false }
-
       format.js   { render :nothing => true }
     end
 
