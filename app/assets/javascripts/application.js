@@ -37,19 +37,5 @@ $(document).ready(function(){
 
 
 
-
-
-  // ---delete_track----
-  $('.delete_track').on('click', function (e) {
-    e.preventDefault();
-    $('.delete_track').bind('ajax:success', function() {  
-
-      $(this).closest('p').fadeOut();
-    });
-
-  });
-
-
-
 });
 

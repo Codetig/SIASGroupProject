@@ -1,22 +1,28 @@
-<div style ='background-color:#fff;'>
-<h1>Buckets#show</h1>
-<p>Find me in app/views/buckets/show.html.erb</p>
-<h3><%= @bucket.name %></h3>
+<div style ='background-color:#fff;' class="container">
+<h2><%= @bucket.name %></h2>
 
 <div id="tracks">
-    <% if @tracks.any? %>
+    <% if @tracks.any? 
+      counter = 1
+      %>
     <% @tracks.each do |track| %>
     <%= div_for track do %>
-      <p><%=  track.id %> <%=  track.title %> by <%=  track.artist %> <%= link_to 'Delete', track_destroy_path(@bucket,track), method: :delete, data: { confirm: 'Are you sure?' }, :class => 'delete_track' %></p>
+      <br><%= counter %>. <strong><%= track.title %></strong> by <%= track.artist %> | <%= link_to ' Delete from this Bucket', track_destroy_path(@bucket,track), method: :delete, data: { confirm: 'Are you sure to delet this song?' }, :class => 'delete_track' %>&nbsp;&nbsp;
+      <iframe src="https://embed.spotify.com/?uri=<%= track.track_uri %>" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+      <br><br>
+    <% counter += 1 %>
     <% end %>
   <% end %>
   <% end %>
 </div>
 <br>
+
 <div id="search" data-url= <%=bucket_tracks_path(@bucket) %>>
+<h3>Search for a Song</h3>
+<p>Type a song name and click on "Search" icon. Then, click on preview play button from the results to play 30 seconds of its first track.</p>
 <%= form_tag "javascript:void(0)", method:"GET" do %>
-  <%= text_field_tag :searchTerm, nil, placeholder: "Search for a song", autofocus: true %>
-  <%= button_tag(type: 'submit', class: "btn btn-default") do %>
+  <%= text_field_tag :searchTerm, nil, placeholder: "Search for a song", autofocus: true, class: "form-control" %>
+  <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
   <span class="glyphicon glyphicon-search"></span> 
 <% end %>
 
