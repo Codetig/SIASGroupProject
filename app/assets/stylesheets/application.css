@@ -113,8 +113,10 @@ body {
 
 #results {
   height:200px;
-  width: 500px;
+  width: auto;
   overflow-y: auto;
+  background-color: none;
+  font-color: white;
 }
 
 .edit-form {
