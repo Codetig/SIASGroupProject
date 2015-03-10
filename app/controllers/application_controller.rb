@@ -5,9 +5,9 @@ class ApplicationController < ActionController::Base
 
   # @user = User.from_omniauth(env["omniauth.auth"])
 
-# def require_user
-#   redirect_to user_buckets_path(current_user) unless current_user
-# end
+def require_user
+  redirect_to user_buckets_path(current_user) unless current_user
+end
 
   protect_from_forgery with: :exception
 
