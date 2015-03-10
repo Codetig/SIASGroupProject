@@ -24,8 +24,8 @@ class BucketsController < ApplicationController
   end
 
   def show
-  @bucket = Bucket.find params[:id]
-  @tracks = @bucket.tracks
+    @bucket = Bucket.find params[:id]
+    @tracks = @bucket.tracks
   end
 
   def create
@@ -48,7 +48,6 @@ class BucketsController < ApplicationController
 private
 
 def check_login
-  # binding.pry
   if session[:user_id] == nil
     redirect_to root_path, notice: "Please log in"
   end

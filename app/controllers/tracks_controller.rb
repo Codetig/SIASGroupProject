@@ -8,7 +8,6 @@ class TracksController < ApplicationController
     
     if @track.save
       redirect_to @bucket, notice: "#{@track.title} has been added"
-      # binding.pry
     else
       redirect_to @bucket, notice: "unable to add #{@track.title}"
     end   
