@@ -4,6 +4,7 @@ $(document).ready(function () {
 //variable to store spotify result and track titles
   var spResult ={};
   var audioObject = null;
+  var audio = new Audio();
 
  $("#search form").on("submit", function (event) {
    event.preventDefault();
@@ -30,9 +31,6 @@ $(document).ready(function () {
 
   //Ife's changed listener
  $('#results ul').on('click', '#play',function (e) { 
-  
-  console.log('ttfasdkfkasd');
-  console.log('this:',this);
   audioObject.play();
  });
  $('#results ul').on('click', '#pause',function (e) { 
@@ -84,25 +82,14 @@ $(document).ready(function () {
    
   // });
 
+
   // ---delete_track----
   $('.delete_track').on('click', function (e) {
     e.preventDefault();
     $('.delete_track').bind('ajax:success', function() {  
-
       $(this).closest('p').fadeOut();
     });
-
   });
-
-
-
-
-
-var audio = new Audio();
-
-
-
-
 
 
 });
