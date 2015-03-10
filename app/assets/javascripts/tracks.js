@@ -3,8 +3,12 @@ $(document).ready(function () {
 
 //variable to store spotify result and track titles
   var spResult ={};
-  var audioObject = null;
+  var audioObject = {};
   var audio = new Audio();
+  // the title and artist help pick the right title and right artist
+  var title = function(context){return context.parent().find($('.tr-title')).text();};
+  var artist = function(context){return context.parent().find($('.tr-artist')).text();};
+  var currentPreview = null;
 
  $("#search form").on("submit", function (event) {
    event.preventDefault();
@@ -19,8 +23,8 @@ $(document).ready(function () {
         var artist = data.tracks.items[i].artists[0].name;
         var preview = data.tracks.items[i].preview_url;
         spResult[title+artist] = data.tracks.items[i];
-        audioObject = new Audio(data.tracks.items[i].preview_url);
-        resultList.append("<li class='list-group-item hover'><span class='tr-title'><b>" + title + "</b></span> - " + "<span class='tr-artist'>" + artist + "</span> <button id='play'>play preview</button><button id='pause'>pause</button> &nbsp; <a href='' class='create_track' remote = 'true'><button class='glyphicon glyphicon-plus' aria-hidden='true'></button></a></li>");
+        audioObject[title+artist] = new Audio(data.tracks.items[i].preview_url);
+        resultList.append("<li class='list-group-item hover'><span class='tr-title'><b>" + title + "</b></span> - " + "<span class='tr-artist'>" + artist + "</span> <button id='play'>play preview</button><button id='pause'>pause</button> <a href='' class='create_track' remote = 'true'><button class='glyphicon glyphicon-plus' aria-hidden='true'></button></a></li>");
         // <a href="+ preview + ">Preview</a>
 
         //removed on click listener on <li>s from here -Ife
@@ -30,12 +34,16 @@ $(document).ready(function () {
  }); //end of searh form submit
 
   //Ife's changed listener
+  //using the artist and title functions define at the top in the events below
  $('#results ul').on('click', '#play',function (e) { 
-  audioObject.play();
+  currentPreview? currentPreview.pause() : null; //to prevent multiple songs from playing
+  currentPreview = audioObject[title($(this))+artist($(this))]; 
+  // console.log(audioObject);
+  currentPreview.play(); 
  });
  $('#results ul').on('click', '#pause',function (e) { 
-  console.log('audioObject:',audioObject);
-  audioObject.pause();
+  // console.log('audioObject:',audioObject);
+  audioObject[title($(this))+artist($(this))].pause();
  });     
 
   $('#results ul').on('click', '.create_track',function (e) { 
