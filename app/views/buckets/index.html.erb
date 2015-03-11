@@ -13,7 +13,7 @@
 
 <div id="background-block">
 
-<h2 class="name-bucket"><%= @user.name %>'s Music Buckets</h2>
+<h2 class="name-bucket"><%= @user.first_name %>'s Music Buckets</h2>
 
 <div class="container">
   <div class="col-sm-11 col-sm-offset-1 ">
@@ -36,7 +36,7 @@
     <% tracks = bucket.tracks %>
     <% playlist = tracks.map{|track| track.spotify_track_id} %>
     <div class="col-sm-3 thumbnail bucketbox text-center"><%= link_to bucket.name, bucket_path(bucket) %> <br>
-      <div><a href="#" class="play-all">Play all</a>
+      <div><a href="#" class='glyphicon glyphicon-play-circle circleplay' aria-hidden='true'></a>
         <iframe src="https://embed.spotify.com/?uri=spotify:trackset:<%= bucket.name %>List:<%= playlist.join(',') %>" width="250" height="80" frameborder="0" allowtransparency="true"></iframe></div>
         <small><%= link_to "Edit |", user_buckets_path(@user), class: "edit" %>  <%= link_to " Delete", bucket_path(bucket), :method => :delete, data: { confirm: "Delete #{bucket.name}; are you sure?" }, class: "edit" %></small>
       <div class="edit-form overlay" aria-hidden="true">
