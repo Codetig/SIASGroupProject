@@ -27,6 +27,7 @@ class BucketsController < ApplicationController
     def show
     @bucket = Bucket.find params[:id]
     @tracks = @bucket.tracks
+    @playlist = @tracks.each {|track| track.spotify_track_id} if @tracks.any?
 
     # if params.key? :search_term
     #   request = Typhoeus::Request.new(

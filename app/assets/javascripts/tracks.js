@@ -49,9 +49,9 @@ $('iframe').hide(); //hiding iframes
   $('#results ul').on('click', '.create_track',function (e) { 
     e.preventDefault(); 
     var formURL = $("#search").attr("data-url");
-    var title = $(this).parent().find($('.tr-title')).text();
-    var artist = $(this).parent().find($('.tr-artist')).text();
-    var postData = spResult[title+artist];
+    // var title = $(this).parent().find($('.tr-title')).text();
+    // var artist = $(this).parent().find($('.tr-artist')).text();
+    var postData = spResult[title($(this))+artist($(this))];
     console.log(postData.preview_url);
     $.ajax({
       url : formURL,
@@ -82,17 +82,40 @@ $('iframe').hide(); //hiding iframes
 
    });
 
+  $('#play-all').on('click',function (e) {
+    $(this).parent().find('iframe').toggle();
+  }); //end of play all
 
-  $('.playbtn div').on('click', function(e){
+
+//testing Iframe click-approximator technique
+  var trkObj = {
+    iframeMouseOver: false,
+    currTrk: null
+  };
+  $(window).on('blur', function(e){
+    if(trkObj.iframeMouseOver){
+      console.log("ok click approximated!");
+      console.log(e);
+      // console.log(harry);
+      $.ajax({
+      url : "/playcount/" + trkObj.currTrk,
+      type: "GET",
+      success: function(){
+        console.log("We did it!");
+      }
+
+      }); //end of AJAX call
+    }
+  }); //end of window listener
+  $('.if-div').on('mouseover', function(){
+    trkObj.iframeMouseOver = true;
+    trkObj.currTrk = $(this).attr('data-trackid');
+  });
+  $('.if-div').on('mouseout', function(){trkObj.iframeMouseOver = false;});
+
+  $('#tracks').on('click', '#tracks ol li div', function(e){
     console.log("Oh me!!");
-    // $.ajax({
-    //   url : "playcount/" + $(this).parent().attr("data-trackid"),
-    //   type: "GET",
-    //   success: function(){
-    //     console.log("We did it!");
-    //   }
-
-    //   });
+    
 
   });
   // //Ife's changed listener/modified by Sue
