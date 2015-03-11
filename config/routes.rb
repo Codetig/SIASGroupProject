@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
+  get 'playcount/:id', to: 'tracks#playcount'
 
  resources :users do
   resources :buckets, shallow: true do

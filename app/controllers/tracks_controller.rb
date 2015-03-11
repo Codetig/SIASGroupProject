@@ -32,6 +32,13 @@ class TracksController < ApplicationController
   def update
   end
 
+  def playcount
+    @track = Track.find(params[:id])
+    @track.playcount ||= 0
+    @track.playcount += 1
+    @track.save
+  end
+
   def destroy
     @track = Track.find(params[:id])
     @track.destroy

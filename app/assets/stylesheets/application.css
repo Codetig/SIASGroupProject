@@ -138,6 +138,10 @@ body {
   margin-right: 10px;
 }
 
+.songtitle{
+  color:white;
+}
+
 header h2 {
   margin: 12px 0 0 8px;
   display: inline-block;

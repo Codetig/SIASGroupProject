@@ -1,6 +1,6 @@
 //=======  Get tracks search result =========//
 $(document).ready(function () {
-
+$('iframe').hide(); //hiding iframes
 //variable to store spotify result and track titles
   var spResult ={};
   var audioObject = {};
@@ -24,7 +24,7 @@ $(document).ready(function () {
         var preview = data.tracks.items[i].preview_url;
         spResult[title+artist] = data.tracks.items[i];
         audioObject[title+artist] = new Audio(data.tracks.items[i].preview_url);
-        resultList.append("<li class='list-group-item hover'><span class='tr-title'><b>" + title + "</b></span> - " + "<span class='tr-artist'>" + artist + "</span> <button id='play'>play preview</button><button id='pause'>pause</button> <a href='' class='create_track' remote = 'true'><button class='glyphicon glyphicon-plus' aria-hidden='true'></button></a></li>");
+        resultList.append("<li class='list-group-item hover'><span class='tr-title'><b>" + title + "</b></span> - " + "<span class='tr-artist'>" + artist + "</span> <a href='' class='create_track' remote = 'true'><button class='glyphicon glyphicon-plus' aria-hidden='true'></button></a><br><a href='#' id='play' class='glyphicon glyphicon-play' aria-hidden='true'></a>&nbsp;&nbsp;<a href='#' id='pause' class='glyphicon glyphicon-pause' aria-hidden='true'></a></li>");
         // <a href="+ preview + ">Preview</a>
 
         //removed on click listener on <li>s from here -Ife
@@ -52,6 +52,7 @@ $(document).ready(function () {
     var title = $(this).parent().find($('.tr-title')).text();
     var artist = $(this).parent().find($('.tr-artist')).text();
     var postData = spResult[title+artist];
+    console.log(postData.preview_url);
     $.ajax({
       url : formURL,
       type: "POST",
@@ -66,8 +67,34 @@ $(document).ready(function () {
     $('#results ul').empty();    
   });
 
-  
+  $('.playbtn').on('click',function (e) {
+      $('iframe').hide(); //hiding iframes
+      
+      if($(this).text() === "Hide"){
+        $('.playbtn').text('Show'); //turning all show-hide link to show
+        $(this).parent().parent().find('iframe').hide();
+        $(this).text('Show');
+      } else {
+        $('.playbtn').text('Show'); //turning all show-hide link to show
+        $(this).parent().parent().find('iframe').show();
+        $(this).text('Hide');
+      }
 
+   });
+
+
+  $('.playbtn div').on('click', function(e){
+    console.log("Oh me!!");
+    // $.ajax({
+    //   url : "playcount/" + $(this).parent().attr("data-trackid"),
+    //   type: "GET",
+    //   success: function(){
+    //     console.log("We did it!");
+    //   }
+
+    //   });
+
+  });
   // //Ife's changed listener/modified by Sue
   // $('#results ul').on('click', '.create_track',function (e) { 
   //   e.preventDefault(); 
