@@ -28,7 +28,12 @@
     </div>
 
     <% @buckets.each do |bucket| %>
-    <div class="col-sm-3 thumbnail bucketbox text-center"><%= link_to bucket.name, bucket_path(bucket) %> <br><small><%= link_to "Edit |", user_buckets_path(@user), class: "edit" %>  <%= link_to " Delete", bucket_path(bucket), :method => :delete, data: { confirm: "Delete #{bucket.name}; are you sure?" }, class: "edit" %></small>
+    <% tracks = bucket.tracks %>
+    <% playlist = tracks.map{|track| track.spotify_track_id} %>
+    <div class="col-sm-3 thumbnail bucketbox text-center"><%= link_to bucket.name, bucket_path(bucket) %> <br>
+      <div><a href="#" class="play-all">Play all</a>
+        <iframe src="https://embed.spotify.com/?uri=spotify:trackset:<%= bucket.name %>List:<%= playlist.join(',') %>" width="250" height="80" frameborder="0" allowtransparency="true"></iframe></div>
+        <small><%= link_to "Edit |", user_buckets_path(@user), class: "edit" %>  <%= link_to " Delete", bucket_path(bucket), :method => :delete, data: { confirm: "Delete #{bucket.name}; are you sure?" }, class: "edit" %></small>
       <div class="edit-form overlay" aria-hidden="true">
       <%= form_for bucket,:url => bucket_path(bucket), method: "PUT" do |f| %>
      <p><%= f.label :name %>: <br> <%= f.text_field :name %> </p>
