@@ -3,6 +3,7 @@ require 'rails_helper'
 feature 'User logs in ' do 
   scenario 'logged in' do
   visit root_path
+  click_button "Log in with facebook"
   
   end
 end

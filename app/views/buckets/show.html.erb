@@ -9,26 +9,34 @@
 </nav>
 </header>
 <div class="row">
- <h2><%= @bucket.name %></h2>
+    <div class="col-sm-4 bucketsmall">
+       <h2><%= @bucket.name %></h2>
+       <p>
+       <h4>"<%= @bucket.desc %>"</h4>
+       </p>
+      </div>
+    <div class="col-sm-8 bucketsmall">
+    <p>
+     <h4>Songs in my Bucket</h4>
+     </p>
+    </div>
 </div>
-<div class="row">
-  <div class="col-sm-4">
 
-   
-    <div style='background-color:rgba(255,255,255,0.4)'>
+<div class="row">
+  <div class="col-sm-4" style='background-color:rgba(255,255,255,0.4)'>
       <div id="search" data-url= <%=bucket_tracks_path(@bucket) %> style="color:#000">
-        <h3>Search for a Song</h3>
-        <p><h4>Type a song name and click on "Search" icon. Then, click on preview play button from the results to play 30 seconds of its first track.</h4></p>
+        <p><h5>Type a song name and click on "Search" icon. Then, click on preview play button from the results to play 30 seconds of its first track.</h5></p>
+        
         <%= form_tag "javascript:void(0)", method:"GET" do %>
           <%= text_field_tag :searchTerm, nil, placeholder: "Search for a song", autofocus: true, class: "form-control" %>
           <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
           <span class="glyphicon glyphicon-search"></span> 
+          </ul>
         <% end %>
         <% end %>
       </div>
   <br>
       <div id="results"><ul class="list-group"></ul></div>
-    </div>
   </div>
 
   <div class="col-sm-8">

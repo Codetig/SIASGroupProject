@@ -11,15 +11,14 @@
   margin-top: 30px
 }
 
-.bucketboxend {
+.bucketsmall{
  background-color: transparent;
-  height: 220px ;
+  height: 120px ;
   font-size: 30px;
   font-color: white;
   display: inline-block;
   opacity: 30%;
-  border: 2px solid white;
-  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.4);
 
 }
 
@@ -123,6 +122,7 @@ body {
   overflow-y: auto;
   background-color: none;
   font-color: white;
+  border-bottom:1px dotted #fff;
 }
 
 .edit-form {
