@@ -98,8 +98,14 @@ body {
 .title {
   font-size: 20px;
   color: white;
-  padding-top: 70%;
+  padding-top: 20%;
 
+}
+
+#circleplay {
+  color: rgba(255,255,255,0.4);
+  margin-top: 20px;
+  font-size:70px;
 }
 
 .add-link {
@@ -120,7 +126,7 @@ body {
 }
 
 .edit-form {
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0,0,0,0.8);
   font-size: 15px;
   border-radius: 10px;
   margin-top: 10px;
@@ -140,6 +146,46 @@ body {
 
 .songtitle{
   color:white;
+}
+
+.formgroup {
+  color:#fff;
+}
+
+
+
+.formgroup input{
+  border:none;
+  background-color: rgba(255, 255, 255, 0)!important;
+  /*background: rgba(255, 255, 255, 0);*/
+  color:#fff;
+  font-size:16px;
+  border-bottom:1px dotted #fff;
+  border-radius:0;
+  box-shadow:none!important;
+  height:auto;
+}
+
+.formgroup textarea{
+  border:none;
+  background-color: rgba(255, 255, 255, 0)!important;
+  background: rgba(255, 255, 255, 0);
+  color:#fff;
+  font-size:16px;
+  border-bottom:1px dotted #fff;
+  border-radius:0;
+  box-shadow:none!important;
+  height:auto;
+}
+
+.btn{
+    color:#fff;
+    border-color:#fff;
+}
+.btn:hover{
+  background:rgba(225, 225, 225, 0.3);
+  color:#fff;
+  border-color:#fff;
 }
 
 header h2 {
