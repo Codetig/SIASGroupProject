@@ -35,11 +35,13 @@
 
     <div id="tracks">
         <% if @tracks.any? %>
+        <div><a href="#" id="play-all">Play all</a>
+        <iframe src="https://embed.spotify.com/?uri=spotify:trackset:<%= @bucket.name %>List:<%= @playlist.join(',') %>" frameborder="0" allowtransparency="true"></iframe></div>
           <ol>
           <% @tracks.each do |track| %>
-        <li class="songtitle" data-trackid=<%=track.id%> ><h4 class="songtitle"><%= track.title %> by <%= track.artist %></h4> <p><a href="#" class="playbtn">Show</a> | <%= link_to 'Delete', track_destroy_path(@bucket,track), method: :delete, data: { confirm: 'Are you sure to delet this song?' }, :class => 'delete_track' %></p>
+        <li class="songtitle"><h4 class="songtitle"><%= track.title %> by <%= track.artist %></h4> <p><a href="#" class="playbtn">Show</a> | <%= link_to 'Delete', track_destroy_path(@bucket,track), method: :delete, data: { confirm: 'Are you sure to delet this song?' }, :class => 'delete_track' %></p>
         
-        <div><iframe src="https://embed.spotify.com/?uri=<%= track.track_uri %>" width="580" height="80" frameborder="0" allowtransparency="true"></iframe></div>
+        <div class="if-div" data-trackid=<%=track.id%>><iframe src="https://embed.spotify.com/?uri=<%= track.track_uri %>" width="580" height="80" frameborder="0" allowtransparency="true"></iframe></div>
         <hr>
        
         </li>

@@ -34,9 +34,10 @@ class TracksController < ApplicationController
 
   def playcount
     @track = Track.find(params[:id])
-    @track.playcount ||= 0
-    @track.playcount += 1
+    @track.play_count ||= 0
+    @track.play_count += 1
     @track.save
+    redirect_to @track.buckets[0]
   end
 
   def destroy
