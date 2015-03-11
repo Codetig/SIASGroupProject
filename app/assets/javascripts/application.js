@@ -35,7 +35,9 @@ $(document).ready(function(){
     editForm.fadeIn(0);
   }); //end of add-link click
 
-
+  $('.play-all').on('click',function (e) {
+  $(this).parent().find('iframe').toggle();
+  }); //end of play all
 
 });
 
