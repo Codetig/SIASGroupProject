@@ -31,6 +31,7 @@ module SIASGroupProject
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
     # config.assets.precompile += ['tracks.js.erb']
+    config.assets.paths << "#{Rails.root}/app/public/videos"
     
   end
 end

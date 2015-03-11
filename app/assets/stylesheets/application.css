@@ -1,5 +1,17 @@
+body {
+  background-image: url("backdarker.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+}
+
+a {
+  color: white;
+}
+
 .bucketbox {
- background-color: transparent;
+  font-family: 'Pacifico', cursive;
+  background-color: transparent;
   height: 220px ;
   font-size: 30px;
   font-color: white;
@@ -8,7 +20,7 @@
   border: 2px solid white;
   border-radius: 20px;
   margin-right: 25px;
-  margin-top: 30px
+  margin-top: 5px
 }
 
 .bucketboxend {
@@ -27,25 +39,35 @@
  background-color: rgba(255,255,255,0.4);
 }
 
-a:link {
-    color: blue;
-}
 
 #logo {
   font-family: 'Pacifico', cursive;
-  font-size: 50px;
+  border-bottom: thick dotted white;
+  text-align: center; 
+  font-size: 90px;
+  color: white;
+  padding-bottom: 3%;
 }
 
-body {
-  background-image: url("http://www.thenerd411.com/wp-content/uploads/2014/12/Small-Black-Hexagon-Pattern-Wallpaper-1.jpg");
-  /*background-color: rgba(255,255,255,0.4);*/
-  background-size: cover;
-  background-repeat: no-repeat;
+nav a {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  margin: auto;
+  color: white;
+  text-decoration: none;
+  list-style-type: none;
 }
 
-.story {
+
+
+.boxes-text {
+    font-family: 'Pacifico', cursive;
+}
+
+.story, h3 {
   font-family: 'Ubuntu', sans-serif;
   font-style: italic;
+  text-align: center;
   font-size: 25px;
   color: white;
 
@@ -131,16 +153,39 @@ body {
   margin-top: 10px;
 }
 
-.nav{
-  font-size: 20px;
-  margin-right: 10px;
+
+
+.sample-text {
+  font-family: 'Pacifico', cursive;
+  color: white;
+  font-size: 30px;
+  margin: 25% 25%;
 }
 
-header h2 {
-  margin: 12px 0 0 8px;
-  display: inline-block;
-}
 
 header {
   margin: 0 0 100px 0;
 }
+
+
+#facebook-login {
+   font-family: 'Pacifico', cursive;
+}
+
+
+/***BUCKETS PAGE***/
+
+
+.name-bucket {
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+  color: #FFFFFF;
+  margin-top: -55px;
+  padding-bottom: 35px;
+}
+
+#logout {
+  text-align: right;
+}
+
+

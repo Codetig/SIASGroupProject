@@ -1,43 +1,41 @@
 
+
+
 <header>
-<nav class="navbar navbar-default navbar-right navbar-fixed-top">
-  <div class="container-fluid" id = "image">
-  <h1 id ="logo">MusicBucket</h1>
-    <ul class="nav navbar-nav navbar-right">
-      <li><%= link_to "Home", root_path %></li>
-      <li><%= link_to "Our story", root_path %></li>
-    </ul>
-  </div>
-</nav>
+
+ <h1 id ="logo">MusicBucket</h1>
+
 </header>
 
-<div class="container">
+<!-- <div id="background-block">
+ -->
+<div class="container boxes-text">
  <div class="row">
     <div class="col-sm-3 col-sm-offset-1 thumbnail bucketbox text-center">
-      <a href="#"><h2 class="title">Just Woke-up</h2></a>
+    <a href="#"><p class="sample-text">Chill</p></a>
     </div>
     <div class="col-sm-3 thumbnail bucketbox text-center">
-      <a href="#"><h2 class="title">Happy</h2></a>
+     <a href="#"><p class="sample-text">Edgy</p></a>
     </div>
     <div class="col-sm-3 thumbnail bucketbox text-center">
-      <a href="#"><h2 class="title">Exhausted</h2></a>
+      <a href="#"><p class="sample-text">Nostalgic</p></a>
     </div>
   </div>
   <p>
-  <h3 class = "story text-center"> "Not feelin it?.. make your own mood bucket. Log in for unlimited access to music and connect to your mood." </h3>
-  </p>
-  <p class = "text-center">
-   <a href="/auth/facebook" id="sign_in" class="btn btn-primary btn-lg outline">Log in with Facebook</a>
-  </p>
-
-
- 
-
   
-<!-- Replacing this sample with Ife & Aparna code
-<h1>Sites#index</h1>
-<p>Find me in app/views/sites/index.html.erb</p>
-@user: < %= @user.first_name %>
-< %= link_to "Buckets", bucket_path(@user) %>
+  <h3 class = "story text-center"> Not feelin' it? Create your own music bucket.</h3> <h3> Name a bucket, customize your tracks, and play.</h3> 
+  <h3>Login for unlimited access to music to match your moods.</h3>
+  
+  </p>
+  <br>
+  <br>
 
- -->
+  <p class = "text-center">
+   <a href="/auth/facebook" id="facebook-login" class="btn btn-primary btn-lg outline">Login with Facebook</a>
+  </p>
+
+
+<h3>Learn more about us <a href="#">here</a></h3>
+
+<!-- </div> -->
+
