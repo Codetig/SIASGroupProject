@@ -1,27 +1,70 @@
-<div style ='background-color:#fff;'>
-<h1>Buckets#show</h1>
-<p>Find me in app/views/buckets/show.html.erb</p>
-<h3><%= @bucket.name %></h3>
 
-<div id="tracks">
-    <% if @tracks.any? %>
-    <% @tracks.each do |track| %>
-    <%= div_for track do %>
-      <p><%=  track.id %> <%=  track.title %> by <%=  track.artist %> <%= link_to 'Delete', track_destroy_path(@bucket,track), method: :delete, data: { confirm: 'Are you sure?' }, :class => 'delete_track' %></p>
-    <% end %>
-  <% end %>
-  <% end %>
+<header>
+<nav class="navbar navbar-default navbar-right navbar-fixed-top">
+  <span id ="logo">MusicBucket</span>
+    <ul id='head-links' class="nav navbar-nav navbar-right list-inline" style="background-color:red">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Our story</a></li>     
+    </ul>
+</nav>
+</header>
+<div class="row">
+    <div class="col-sm-4 bucketsmall">
+       <h2><%= @bucket.name %></h2>
+       <p>
+       <h4>"<%= @bucket.desc %>"</h4>
+       </p>
+      </div>
+    <div class="col-sm-8 bucketsmall">
+    <p>
+     <h4>Songs in my Bucket</h4>
+     </p>
+    </div>
 </div>
-<br>
-<div id="search" data-url= <%=bucket_tracks_path(@bucket) %>>
-<%= form_tag "javascript:void(0)", method:"GET" do %>
-  <%= text_field_tag :searchTerm, nil, placeholder: "Search for a song", autofocus: true %>
-  <%= button_tag(type: 'submit', class: "btn btn-default") do %>
-  <span class="glyphicon glyphicon-search"></span> 
-<% end %>
 
-<% end %>
+<div class="row">
+  <div class="col-sm-4" style='background-color:rgba(255,255,255,0.4)'>
+      <div id="search" data-url= <%=bucket_tracks_path(@bucket) %> style="color:#000">
+        <p><h5>Type a song name and click on "Search" icon. Then, click on preview play button from the results to play 30 seconds of its first track.</h5></p>
+        
+        <%= form_tag "javascript:void(0)", method:"GET" do %>
+          <%= text_field_tag :searchTerm, nil, placeholder: "Search for a song", autofocus: true, class: "form-control" %>
+          <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+          <span class="glyphicon glyphicon-search"></span> 
+          </ul>
+        <% end %>
+        <% end %>
+      </div>
+  <br>
+      <div id="results"><ul class="list-group"></ul></div>
+  </div>
+
+  <div class="col-sm-8">
+
+    <div id="tracks">
+        <% if @tracks.any? %>
+        <div><a href="#" id="play-all">Play all</a>
+        <iframe src="https://embed.spotify.com/?uri=spotify:trackset:<%= @bucket.name %>List:<%= @playlist.join(',') %>" frameborder="0" allowtransparency="true"></iframe></div>
+          <ol>
+          <% @tracks.each do |track| %>
+        <li class="songtitle"><h4 class="songtitle"><%= track.title %> by <%= track.artist %></h4> <p><a href="#" class="playbtn">Show</a> | <%= link_to 'Delete', track_destroy_path(@bucket,track), method: :delete, data: { confirm: 'Are you sure to delet this song?' }, :class => 'delete_track' %></p>
+        
+        <div class="if-div" data-trackid=<%=track.id%>><iframe src="https://embed.spotify.com/?uri=<%= track.track_uri %>" width="580" height="80" frameborder="0" allowtransparency="true"></iframe></div>
+        <hr>
+       
+        </li>
+        
+        <% end %>
+        </ol>
+        <% end %>
+  </div>
+
+  
+
 </div>
-<br>
-<div id="results"><ul class="list-group"></ul></div>
 </div>
+
+
+
+
+

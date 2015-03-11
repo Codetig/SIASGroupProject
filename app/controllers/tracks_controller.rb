@@ -32,11 +32,19 @@ class TracksController < ApplicationController
   def update
   end
 
+  def playcount
+    @track = Track.find(params[:id])
+    @track.play_count ||= 0
+    @track.play_count += 1
+    @track.save
+    redirect_to @track.buckets[0]
+  end
+
   def destroy
     @track = Track.find(params[:id])
     @track.destroy
     respond_to do |format|
-      format.html { redirect_to bucket_url(@bucket), notice: "Successfully destroyed a song." }
+      format.html { redirect_to bucket_url(@bucket), notice: "Successfully deleted a song." }
       format.json { head :no_content }
       format.js   { render :nothing => true }
     end

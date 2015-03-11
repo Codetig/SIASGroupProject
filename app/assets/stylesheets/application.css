@@ -10,8 +10,9 @@ a {
 }
 
 .bucketbox {
-  font-family: 'Pacifico', cursive;
-  background-color: transparent;
+  /*font-family: 'Pacifico', cursive;*/
+  font-family: 'Ubuntu', sans-serif;
+  background-color: rgba(0,0,0,0.7);
   height: 220px ;
   font-size: 30px;
   font-color: white;
@@ -23,20 +24,19 @@ a {
   margin-top: 5px
 }
 
-.bucketboxend {
+.bucketsmall{
  background-color: transparent;
-  height: 220px ;
+  height: 120px ;
   font-size: 30px;
   font-color: white;
   display: inline-block;
   opacity: 30%;
-  border: 2px solid white;
-  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.4);
 
 }
 
 .bucketbox:hover {
- background-color: rgba(255,255,255,0.4);
+  background-color: rgba(255,255,255,0.4);
 }
 
 
@@ -68,7 +68,7 @@ nav a {
   font-family: 'Ubuntu', sans-serif;
   font-style: italic;
   text-align: center;
-  font-size: 25px;
+  font-size: 20px;
   color: white;
 
 }
@@ -98,7 +98,7 @@ nav a {
   color: white;
 
 }
-
+/*
 .btn.outline {
     background: none;
     padding: 12px 22px;
@@ -107,7 +107,7 @@ nav a {
     border: 2px solid #0099cc;
     color: #0099cc;
 }
-.btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
+.btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active{
     color: #33a6cc;
     border-color: #33a6cc;
 }
@@ -115,13 +115,19 @@ nav a {
     border-color: #007299;
     color: #007299;
     box-shadow: none;
-}
+}*/
 
 .title {
   font-size: 20px;
   color: white;
-  padding-top: 70%;
+  padding-top: 20%;
 
+}
+
+.circleplay {
+  color: rgba(255,255,255,0.9);
+ margin-top: 25%;
+  font-size:70px;
 }
 
 .add-link {
@@ -135,12 +141,15 @@ nav a {
 
 #results {
   height:200px;
-  width: 500px;
+  width: auto;
   overflow-y: auto;
+  background-color: none;
+  font-color: white;
+  border-bottom:1px dotted #fff;
 }
 
 .edit-form {
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0,0,0,0.8);
   font-size: 15px;
   border-radius: 10px;
   margin-top: 10px;
@@ -155,11 +164,62 @@ nav a {
 
 
 
+
 .sample-text {
-  font-family: 'Pacifico', cursive;
+ /* font-family: 'Pacifico', cursive;
+  font-family: 'Ubuntu', sans-serif;*/
   color: white;
   font-size: 30px;
-  margin: 25% 25%;
+  margin: 5% 25%;
+
+.songtitle {
+  color:white;
+}
+
+.formgroup {
+  color:#fff;
+}
+
+
+
+.formgroup input{
+  border:none;
+  background-color: rgba(255, 255, 255, 0)!important;
+  /*background: rgba(255, 255, 255, 0);*/
+  color:#fff;
+  font-size:16px;
+  border-bottom:1px dotted #fff;
+  border-radius:0;
+  box-shadow:none!important;
+  height:auto;
+}
+
+.formgroup textarea{
+  border:none;
+  background-color: rgba(255, 255, 255, 0)!important;
+  background: rgba(255, 255, 255, 0);
+  color:#fff;
+  font-size:16px;
+  border-bottom:1px dotted #fff;
+  border-radius:0;
+  box-shadow:none!important;
+  height:auto;
+}
+
+.btn{
+    color:#fff;
+    border-color:#fff;
+}
+.btn:hover{
+  background:rgba(225, 225, 225, 0.3);
+  color:#fff;
+  border-color:#fff;
+}
+
+header h2 {
+  margin: 12px 0 0 8px;
+  display: inline-block;
+
 }
 
 
@@ -168,8 +228,8 @@ header {
 }
 
 
-#facebook-login {
-   font-family: 'Pacifico', cursive;
+#login {
+   font-family: 'Ubuntu', sans-serif;
 }
 
 

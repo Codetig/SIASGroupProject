@@ -3,15 +3,14 @@ class BucketsController < ApplicationController
   before_filter :require_user
   def index
     @user = User.find(params[:user_id])
+
     unless @user.first_name
     @user.first_name = @user.name.split(" ")[0]
     @user.last_name = @user.name.split(" ")[1]
     end
     @buckets = @user.buckets.order(name: :asc)
-    unless @user.first_name
-    @user.first_name = @user.name.split(" ")[0]
-    @user.last_name = @user.name.split(" ")[1]
-   end
+    # @tracks = @bucket.tracks
+    # @playlist = @tracks.map {|track| track.spotify_track_id} if @tracks.any?
   end
 
   def update
@@ -27,6 +26,7 @@ class BucketsController < ApplicationController
     def show
     @bucket = Bucket.find params[:id]
     @tracks = @bucket.tracks
+    @playlist = @tracks.map {|track| track.spotify_track_id} if @tracks.any?
 
     # if params.key? :search_term
     #   request = Typhoeus::Request.new(
