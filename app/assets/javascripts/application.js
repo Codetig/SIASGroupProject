@@ -16,28 +16,45 @@
 //= require_tree .
 
 $(document).ready(function(){
-  $('#add-form').fadeOut(0);
-  $('.edit-form').fadeOut(0);
-  $('.add-link').on('click', function(e){
-    e.preventDefault();
-    $('#edit-form').fadeOut(0);
-    $('#add-form').fadeIn(0);
-    // $('#add-form').append('<h2>Add New Bucket</h2><form action="/users/:user_id/buckets"><label for="name">Name: </label><input type="text" name="name" id="name"><br><label for="desc">Description: </label><input type="text" name="desc" id="desc"><input type="submit" value="Add Bucket"></form>');
-  }); //end of add-link click
+  var edgyAudio = new Audio("https://p.scdn.co/mp3-preview/0b046dcd66e5bd91df44352490e587bbf8b579b7");
+  var happyAudio = new Audio("https://p.scdn.co/mp3-preview/6b00000be293e6b25f61c33e206a0c522b5cbc87");
+  var nostAudio = new Audio("https://p.scdn.co/mp3-preview/6f0bab1d0b816bff19813a1847032e1f45dc3045");
+  var icon = ["glyphicon glyphicon-play-circle","glyphicon glyphicon-pause"];
+  
 
-  $('.edit').on('click', function(e){
-    e.preventDefault();
-    $('#add-form').fadeOut(0);
-    $('.edit-form').fadeOut(0);
+  $('#happy').on('click',function(e){
+    if($(this).attr("class") === icon[0]){
+      happyAudio.play();
+      $(this).attr("class",icon[1]);
+    } else {
+      happyAudio.pause();
+      $(this).attr("class",icon[0]);
+    }
 
-    // console.log($(this).parent().parent().find('form')); //testing selection
-    var editForm = $(this).parent().parent().find('.edit-form');
-    editForm.fadeIn(0);
-  }); //end of add-link click
+  });
 
-  $('.play-all').on('click',function (e) {
-  $(this).parent().find('iframe').toggle();
-  }); //end of play all
+
+   $('#edgy').on('click',function(e){
+    if($(this).attr("class") === icon[0]){
+      edgyAudio.play();
+      $(this).attr("class",icon[1]);
+    } else {
+      edgyAudio.pause();
+      $(this).attr("class",icon[0]);
+    }
+
+  });
+
+    $('#nost').on('click',function(e){
+    if($(this).attr("class") === icon[0]){
+      nostAudio.play();
+      $(this).attr("class",icon[1]);
+    } else {
+      nostAudio.pause();
+      $(this).attr("class",icon[0]);
+    }
+
+  });
 
 });
 
