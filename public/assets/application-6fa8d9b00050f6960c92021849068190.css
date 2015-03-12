@@ -2,6 +2,7 @@
   color: white;
 }*/
 
+
 body {
   background-image: url("backdarker.jpg");
   background-size: cover;
@@ -77,7 +78,8 @@ nav a {
 
 }
 
-.overlay {
+.overlay
+ {
      position: absolute;
      top: 0;
      left: 0;
@@ -88,7 +90,7 @@ nav a {
      display: inline-block;
  }
 
- .form {
+ .form{
   background-color: transparent;
   font-size:16px;
   border-bottom:1px dotted #fff;
@@ -102,11 +104,6 @@ nav a {
 
 }
 
-.add {
-  font-size: 16px;
-  color: white;
-
-}
 .btn.outline {
     background: none;
     padding: 12px 22px;
@@ -139,8 +136,8 @@ nav a {
 }
 
 .add-link {
-  
-  font-size: 115px;
+  margin: 0;
+  font-size: 80px;
 }
 
 #head-links {
