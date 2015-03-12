@@ -32,6 +32,6 @@ module SIASGroupProject
     config.active_record.raise_in_transactional_callbacks = true
     # config.assets.precompile += ['tracks.js.erb']
     config.assets.paths << "#{Rails.root}/app/public/videos"
-    
+    config.assets.paths << "#{Rails.root}/app/assets/pdf"
   end
 end
