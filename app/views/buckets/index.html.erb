@@ -16,12 +16,12 @@
 <h2 class="name-bucket"><%= @user.first_name %>'s Music Buckets</h2>
 
 <div class="container">
-  <div class="col-sm-11 col-sm-offset-1 ">
+  <div class="col-sm-11 col-sm-offset-1">
 
   <div class="row">
 
 
-    <div class="col-sm-3 thumbnail bucketbox text-center"><span class="add-link"><%= link_to "+", user_buckets_path(@user) %></span>
+    <div class="col-sm-3 thumbnail bucketbox text-center"><span class="add-link"><%= link_to "+", user_buckets_path(@user) %></span><p><small><%= link_to "Create Bucket", user_buckets_path(@user), class: "add"%></small></p>
 
     <div id="add-form" class="overlay">
       <%= form_for Bucket.new, :url => user_buckets_path(@user) do |f| %>

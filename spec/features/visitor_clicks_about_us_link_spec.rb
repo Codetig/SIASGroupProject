@@ -10,6 +10,6 @@ feature "Visitor clicks on the about us link" do
     click_link "here"
 
     #verify
-    expect(page).to have_content("Team Members")
+    expect(page).to have_content("Thanks for stopping by MusicBucket!")
   end
 end
