@@ -33,7 +33,7 @@ module SIASGroupProject
     config.action_mailer.default_url_options = { host: 'localhost: 3000'}
     # config.assets.precompile += ['tracks.js.erb']
     config.assets.paths << "#{Rails.root}/app/public/videos"
-    
+    config.assets.paths << "#{Rails.root}/app/assets/pdf"
   end
      
 end
