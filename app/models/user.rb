@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_many :buckets, dependent: :destroy
 
-  # validates :fb_id, presence: true, uniqueness: true
+  # validates :uid, presence: true, uniqueness: true
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first || create_from_omniauth(auth)
