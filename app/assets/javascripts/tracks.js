@@ -92,7 +92,7 @@ $('iframe').hide(); //hiding iframes
     iframeMouseOver: false,
     currTrk: null
   };
-  $(window).on('blur', function(e){
+  $(window).on("blur",function(e){
     if(trkObj.iframeMouseOver){
       console.log("ok click approximated!");
       console.log(e);
@@ -113,11 +113,11 @@ $('iframe').hide(); //hiding iframes
   });
   $('.if-div').on('mouseout', function(){trkObj.iframeMouseOver = false;});
 
-  $('#tracks').on('click', '#tracks ol li div', function(e){
-    console.log("Oh me!!");
+  // $('#tracks').on('click', '#tracks ol li div', function(e){
+  //   console.log("Oh me!!");
     
 
-  });
+  // });
   // //Ife's changed listener/modified by Sue
   // $('#results ul').on('click', '.create_track',function (e) { 
   //   e.preventDefault(); 

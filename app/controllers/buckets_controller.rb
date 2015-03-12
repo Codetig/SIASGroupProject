@@ -24,7 +24,7 @@ class BucketsController < ApplicationController
 
   def show
     @bucket = Bucket.find params[:id]
-    @tracks = @bucket.tracks
+    @tracks = @bucket.tracks.order(play_count: :desc)
     @user = @bucket.user
     unless @user.first_name
     @user.first_name = @user.name.split(" ")[0]
