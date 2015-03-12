@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'sites#index'
   get '/site/project', to: 'sites#about_project'
+  get '/site/guest_login', to: 'sites#guest_login'
+  
   get '/auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
