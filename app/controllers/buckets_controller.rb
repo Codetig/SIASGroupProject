@@ -24,7 +24,7 @@ class BucketsController < ApplicationController
 
   def show
     @bucket = Bucket.find params[:id]
-    @tracks = @bucket.tracks
+    @tracks = @bucket.tracks.order(play_count: :desc)
     @playlist = @tracks.map {|track| track.spotify_track_id} if @tracks.any?
   end
 
