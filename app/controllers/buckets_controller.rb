@@ -25,6 +25,11 @@ class BucketsController < ApplicationController
   def show
     @bucket = Bucket.find params[:id]
     @tracks = @bucket.tracks.order(play_count: :desc)
+    @user = @bucket.user
+    unless @user.first_name
+    @user.first_name = @user.name.split(" ")[0]
+    @user.last_name = @user.name.split(" ")[1]
+    end
     @playlist = @tracks.map {|track| track.spotify_track_id} if @tracks.any?
   end
 
