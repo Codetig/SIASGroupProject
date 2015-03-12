@@ -1,6 +1,3 @@
-/** {
-  color: white;
-}*/
 
 body {
   background-image: url("backdarker.jpg");
@@ -14,7 +11,6 @@ header a {
 }
 
 .bucketbox {
-  /*font-family: 'Pacifico', cursive;*/
   font-family: 'Ubuntu', sans-serif;
   background-color: rgba(0,0,0,0.7);
   height: 220px ;
@@ -28,8 +24,9 @@ header a {
   margin-top: 5px
 }
 
-.bucketsmall{
+.bucketsmall {
  background-color: transparent;
+ font-family: 'Ubuntu', sans-serif;
   height: 120px ;
   font-size: 30px;
   font-color: white;
@@ -38,6 +35,9 @@ header a {
   border: 1px solid rgba(255,255,255,0.4);
 
 }
+
+
+
 
 .bucketbox:hover {
   background-color: rgba(255,255,255,0.4);
@@ -61,8 +61,6 @@ nav a {
   text-decoration: none;
   list-style-type: none;
 }
-
-
 
 .boxes-text {
     font-family: 'Pacifico', cursive;
@@ -151,12 +149,6 @@ nav a {
   border-bottom:1px dotted #fff;
 }
 
-/*.tracks {
-  height:100px;
-  width: auto;
-  overflow-y: auto;
-}*/
-
 .edit-form {
   background-color: rgba(0,0,0,0.8);
   font-size: 15px;
@@ -226,12 +218,6 @@ nav a {
   border-color:#fff;
 }
 
-/*header h2 {
-  margin: 12px 0 0 8px;
-  display: inline-block;
-
-}*/
-
 
 header {
   margin: 0 0 60px 0;
@@ -247,10 +233,10 @@ header {
 /***BUCKETS PAGE***/
 
 
-.name-bucket {
+#name-bucket {
   font-family: 'Pacifico', cursive;
   text-align: center;
-  color: #FFFFFF;
+  color: red;
   margin-top: -55px;
   padding-bottom: 35px;
 }
@@ -267,10 +253,10 @@ header {
   color: black;
 }
 
-.name-bucket{
+/*.name-bucket{
   font-family: 'Ubuntu', sans-serif;
 
-}
+}*/
 
 .linkwhite {
   color:white;
