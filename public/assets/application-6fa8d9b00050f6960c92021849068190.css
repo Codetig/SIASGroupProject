@@ -1,0 +1,329 @@
+/** {
+  color: white;
+}*/
+
+
+body {
+  background-image: url("backdarker.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+}
+
+header a {
+  color: white;
+}
+
+.bucketbox {
+  /*font-family: 'Pacifico', cursive;*/
+  font-family: 'Ubuntu', sans-serif;
+  background-color: rgba(0,0,0,0.7);
+  height: 220px ;
+  font-size: 30px;
+  font-color: white;
+  display: inline-block;
+  opacity: 30%;
+  border: 2px solid white;
+  border-radius: 20px;
+  margin-right: 25px;
+  margin-top: 5px
+}
+
+.bucketsmall{
+ background-color: transparent;
+  height: 120px ;
+  font-size: 30px;
+  font-color: white;
+  display: inline-block;
+  opacity: 30%;
+  border: 1px solid rgba(255,255,255,0.4);
+
+}
+
+.bucketbox:hover {
+  background-color: rgba(255,255,255,0.4);
+}
+
+
+#logo {
+  font-family: 'Pacifico', cursive;
+  border-bottom: thick dotted white;
+  text-align: center; 
+  font-size: 90px;
+  color: white;
+  padding-bottom: 2%;
+}
+
+nav a {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  margin: auto;
+  color: white;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+
+
+.boxes-text {
+    font-family: 'Pacifico', cursive;
+}
+
+.story, h3 {
+  font-family: 'Ubuntu', sans-serif;
+  font-style: italic;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+
+}
+
+.overlay
+ {
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background-color: transparent;
+     z-index: 10000;
+     display: inline-block;
+ }
+
+ .form{
+  background-color: transparent;
+  font-size:16px;
+  border-bottom:1px dotted #fff;
+  border-radius:0;
+  
+}
+
+.edit {
+  font-size: 16px;
+  color: white;
+
+}
+
+.btn.outline {
+    background: none;
+    padding: 12px 22px;
+}
+.btn-primary.outline {
+    border: 2px solid #0099cc;
+    color: #0099cc;
+}
+.btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active{
+    color: #33a6cc;
+    border-color: #33a6cc;
+}
+.btn-primary.outline:active, .btn-primary.outline.active {
+    border-color: #007299;
+    color: #007299;
+    box-shadow: none;
+}
+
+.title {
+  font-size: 20px;
+  color: white;
+  padding-top: 20%;
+
+}
+
+.circleplay {
+  color: rgba(255,255,255,0.9);
+ margin-top: 20%;
+  font-size:70px;
+}
+
+.add-link {
+  margin: 0;
+  font-size: 80px;
+}
+
+#head-links {
+  margin: 0 20px 0 0;
+}
+
+#results {
+  height:400px;
+  width: auto;
+  overflow-y: auto;
+  font-color: white;
+  border-bottom:1px dotted #fff;
+}
+
+/*.tracks {
+  height:100px;
+  width: auto;
+  overflow-y: auto;
+}*/
+
+.edit-form {
+  background-color: rgba(0,0,0,0.8);
+  font-size: 15px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+#add-form {
+  background-color: rgba(0,0,0,0.7);
+  font-size: 15px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+
+
+
+.sample-text {
+ /* font-family: 'Pacifico', cursive;
+  font-family: 'Ubuntu', sans-serif;*/
+  color: white;
+  font-size: 30px;
+  margin: 5% 25%;
+}
+
+.songtitle {
+  color:white;
+}
+
+.formgroup {
+  color:#fff;
+}
+
+
+
+.formgroup input{
+  border:none;
+  background-color: rgba(255, 255, 255, 0)!important;
+  /*background: rgba(255, 255, 255, 0);*/
+  color:#fff;
+  font-size:16px;
+  border-bottom:1px dotted #fff;
+  border-radius:0;
+  box-shadow:none!important;
+  height:auto;
+}
+
+.formgroup textarea{
+  border:none;
+  background-color: rgba(255, 255, 255, 0)!important;
+  background: rgba(255, 255, 255, 0);
+  color:#fff;
+  font-size:16px;
+  border-bottom:1px dotted #fff;
+  border-radius:0;
+  box-shadow:none!important;
+  height:auto;
+}
+
+.btn{
+/*    color:#fff;*/
+    border-color:#fff;
+}
+.btn:hover{
+  background:rgba(225, 225, 225, 0.3);
+  color:#fff;
+  border-color:#fff;
+}
+
+/*header h2 {
+  margin: 12px 0 0 8px;
+  display: inline-block;
+
+}*/
+
+
+header {
+  margin: 0 0 60px 0;
+}
+
+
+#login {
+   font-family: 'Ubuntu', sans-serif;
+   font-size: 20px;
+}
+
+
+/***BUCKETS PAGE***/
+
+
+.name-bucket {
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+  color: #FFFFFF;
+  margin-top: -55px;
+  padding-bottom: 35px;
+}
+
+#logout {
+  text-align: right;
+  color: #FFFFFF;
+}
+#logout a:hover {
+  color: #3FBFBD;
+}
+
+.list-group-item{
+  color: black;
+}
+
+.name-bucket{
+  font-family: 'Ubuntu', sans-serif;
+
+}
+
+.linkwhite {
+  color:white;
+}
+
+/*-----about project-------*/
+.project {
+  background-color: #fff;
+  opacity: 0%;
+}
+
+div.img {
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #000;
+    height: auto;
+    width: auto;
+    float: left;
+    text-align: center;
+}
+
+div.img img {
+    display: inline;
+    margin: 5px;
+    border: 1px solid #ffffff;
+}
+
+div.img a:hover img {
+    border:1px solid #0000ff;
+}
+
+div.desc {
+    text-align: center;
+    font-weight: normal;
+    width: 120px;
+    margin: 5px;
+}
+
+div .projectHeader {
+  font-family: 'Ubuntu', sans-serif;
+  font-style: italic;
+  font-size: 20px;
+  color: blue;
+  font-weight: bold;  
+  font-size: 18px;
+  color:white;
+}
+
+div .projectText {
+  font-family: 'Ubuntu', sans-serif;
+  font-style: italic;
+  font-size: 20px;
+  color: blue;
+  font-weight: bold;  
+}
