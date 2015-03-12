@@ -276,10 +276,19 @@ header {
   color:white;
 }
 
-/*-----about project-------*/
+/*-----ABOUT US PAGE-------*/
+#behind {
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+  color: white; 
+  margin-top: -40px;
+  margin-bottom: 20px;
+}
+
 .project {
-  background-color: #fff;
-  opacity: 0%;
+  background-color: rgba(225,225,225, 0.5);
+  border-radius: 5%;
+
 }
 
 div.img {
@@ -303,6 +312,7 @@ div.img a:hover img {
 }
 
 div.desc {
+    font-family: 'Pacifico', cursive;
     text-align: center;
     font-weight: normal;
     width: 120px;
@@ -313,10 +323,14 @@ div .projectHeader {
   font-family: 'Ubuntu', sans-serif;
   font-style: italic;
   font-size: 20px;
-  color: blue;
+  color: black;
   font-weight: bold;  
   font-size: 18px;
-  color:white;
+  text-align: center;
+  border-bottom: 2px;
+  border-bottom-style: dotted;
+
+
 }
 
 div .projectText {
@@ -326,3 +340,10 @@ div .projectText {
   color: blue;
   font-weight: bold;  
 }
+
+.photos {
+  margin-left: 6px;
+}
+
+
+
