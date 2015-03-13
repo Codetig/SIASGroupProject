@@ -2,22 +2,24 @@
 <header>
  <h1 id ="logo">MusicBucket</h1>
 <ul>
-  <li id="logout"><%= link_to "Home", root_path, class: "btn btn-info", id: "login" %></li>
+  <li id="logout"><%= link_to "Home", root_path %></li>
 </ul>
 </header>
 
-<div class="container" style="font-color:#000; background-color:#fff">
+<h2 id="behind">Behind the Scenes</h2>
+
+<div class="container project text-center" style="font-color:#000; background-color:#fff;">
  <br><br>
   <div class="row">
-    <div class="col-md-12 col-sm-12"><p  class="projectHeader">Music Bucket</p> Thanks for stopping by MusicBucket! This was a collborative group project, created by Sue Lucas, Shilpa Kumar, Ife O, and Aparna Sainath, while full-stack students at General Assembly. This is an interactive music application, organizing your personal music according to your moods!</div>
+    <div class="col-md-12 col-sm-12"><p  class="projectHeader">Music Bucket</p> Thanks for stopping by MusicBucket! <br>This was a collborative group project, created by Sue Lucas, Shilpa Kumar, Ife Omoniyi, and Aparna Sainath, <br>while full-stack students at General Assembly. <br>This is an interactive music application, organizing your personal music according to your moods!</div>
   </div>
   
   <br><br>
 
   <div class="row">
-    <div class="col-md-12 col-sm-12"><p  class="projectHeader">Who produced this project:</div>
+    <div class="col-md-12 col-sm-12"><p  class="projectHeader">Developers</div>
   </div>
-  <div class="row">
+  <div class="row photos">
     <div class="col-md-3 col-sm-3 img">
       <%= image_tag("aparna.jpg", size: "200x200", alt: "Aparna Sainath") %>
       <div class="desc">Aparna Sainath</div>      
@@ -57,18 +59,18 @@
   <br><br>
 
   <div class="row">
-    <div class="col-md-12 col-sm-12"><p  class="projectHeader">Navigating our site</p>
-    Login through your Facebook account to access your personalized bucket page. Add buckets with your choice of music according to the mood you're in. Then, sit back, relax, and listen to your newly built playlist!
+    <div class="col-md-12 col-sm-12"><p  class="projectHeader">Navigation </p>
+    Login through your Facebook account to access your personalized bucket page. <br>Add buckets with your choice of music according to the mood you're in. <br>Then, sit back, relax, and listen to your newly built playlist!
     <br>
-    We set up a dummy user for a quick overview of our project so that having a Facebook account is not required. Copy & paste the following URL into your browser to access MusicBucket. 
-
+    We set up a dummy user for a quick overview of our project so that having a Facebook account is not required. <br>Copy & paste the following URL into your browser to access MusicBucket. <br><br>
+    <h4><%= link_to "Experience as Guest", site_guest_login_path %></h4>
     </div>
   </div>
 
   <br><br>
 
   <div class="row">
-    <div class="col-md-12 col-sm-12"><p  class="projectHeader">Technologies used:</p>
+    <div class="col-md-12 col-sm-12"><p  class="projectHeader">Technologies</p>
     <strong>Language:</strong> HTML5, CSS3, Javascript, JQuery, AJAX, Ruby
     <br>
     <strong>Framework:</strong> Rails 4
@@ -82,4 +84,4 @@
 
 </div> <!-- end of the container -->
 
-
+<br><br>

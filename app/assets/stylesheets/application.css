@@ -13,7 +13,7 @@ header a {
 .bucketbox {
   font-family: 'Ubuntu', sans-serif;
   background-color: rgba(0,0,0,0.7);
-  height: 220px ;
+  height: 220px;
   font-size: 30px;
   font-color: white;
   display: inline-block;
@@ -21,7 +21,7 @@ header a {
   border: 2px solid white;
   border-radius: 20px;
   margin-right: 25px;
-  margin-top: 5px
+  margin-top: 5px;
 }
 
 .bucketsmall {
@@ -75,8 +75,7 @@ nav a {
 
 }
 
-.overlay
- {
+.overlay {
      position: absolute;
      top: 0;
      left: 0;
@@ -87,11 +86,11 @@ nav a {
      display: inline-block;
  }
 
- .form{
+ .form {
   background-color: transparent;
-  font-size:16px;
-  border-bottom:1px dotted #fff;
-  border-radius:0;
+  font-size: 16px;
+  border-bottom: 1px dotted #fff;
+  border-radius: 0;
   
 }
 
@@ -101,6 +100,11 @@ nav a {
 
 }
 
+.add {
+  font-size: 16px;
+  color: white;
+
+}
 .btn.outline {
     background: none;
     padding: 12px 22px;
@@ -129,12 +133,12 @@ nav a {
 .circleplay {
   color: rgba(255,255,255,0.9);
  margin-top: 20%;
-  font-size:70px;
+  font-size: 70px;
 }
 
 .add-link {
-  margin: 0;
-  font-size: 80px;
+  
+  font-size: 115px;
 }
 
 #head-links {
@@ -146,7 +150,7 @@ nav a {
   width: auto;
   overflow-y: auto;
   font-color: white;
-  border-bottom:1px dotted #fff;
+  border-bottom: 1px dotted #fff;
 }
 
 .edit-form {
@@ -175,11 +179,11 @@ nav a {
 }
 
 .songtitle {
-  color:white;
+  color: white;
 }
 
 .formgroup {
-  color:#fff;
+  color: #fff;
 }
 
 
@@ -210,7 +214,7 @@ nav a {
 
 .btn{
 /*    color:#fff;*/
-    border-color:#fff;
+  border-color:#fff;
 }
 .btn:hover{
   background:rgba(225, 225, 225, 0.3);
@@ -262,10 +266,19 @@ header {
   color:white;
 }
 
-/*-----about project-------*/
+/*-----ABOUT US PAGE-------*/
+#behind {
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+  color: white; 
+  margin-top: -40px;
+  margin-bottom: 20px;
+}
+
 .project {
-  background-color: #fff;
-  opacity: 0%;
+  background-color: rgba(225,225,225, 0.5);
+  border-radius: 5%;
+
 }
 
 div.img {
@@ -289,6 +302,7 @@ div.img a:hover img {
 }
 
 div.desc {
+    font-family: 'Pacifico', cursive;
     text-align: center;
     font-weight: normal;
     width: 120px;
@@ -299,10 +313,14 @@ div .projectHeader {
   font-family: 'Ubuntu', sans-serif;
   font-style: italic;
   font-size: 20px;
-  color: blue;
+  color: black;
   font-weight: bold;  
   font-size: 18px;
-  color:white;
+  text-align: center;
+  border-bottom: 2px;
+  border-bottom-style: dotted;
+
+
 }
 
 div .projectText {
@@ -312,3 +330,10 @@ div .projectText {
   color: blue;
   font-weight: bold;  
 }
+
+.photos {
+  margin-left: 6px;
+}
+
+
+
