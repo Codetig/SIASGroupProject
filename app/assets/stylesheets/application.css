@@ -25,10 +25,10 @@ header a {
   border: 2px solid white;
   border-radius: 20px;
   margin-right: 25px;
-  margin-top: 5px
+  margin-top: 5px;
 }
 
-.bucketsmall{
+.bucketsmall {
  background-color: transparent;
   height: 120px ;
   font-size: 30px;
@@ -90,9 +90,9 @@ nav a {
 
  .form {
   background-color: transparent;
-  font-size:16px;
-  border-bottom:1px dotted #fff;
-  border-radius:0;
+  font-size: 16px;
+  border-bottom: 1px dotted #fff;
+  border-radius: 0;
   
 }
 
@@ -135,7 +135,7 @@ nav a {
 .circleplay {
   color: rgba(255,255,255,0.9);
  margin-top: 20%;
-  font-size:70px;
+  font-size: 70px;
 }
 
 .add-link {
@@ -148,11 +148,11 @@ nav a {
 }
 
 #results {
-  height:400px;
+  height: 400px;
   width: auto;
   overflow-y: auto;
   font-color: white;
-  border-bottom:1px dotted #fff;
+  border-bottom: 1px dotted #fff;
 }
 
 /*.tracks {
@@ -187,47 +187,47 @@ nav a {
 }
 
 .songtitle {
-  color:white;
+  color: white;
 }
 
 .formgroup {
-  color:#fff;
+  color: #fff;
 }
 
 
 
 .formgroup input{
-  border:none;
+  border: none;
   background-color: rgba(255, 255, 255, 0)!important;
   /*background: rgba(255, 255, 255, 0);*/
-  color:#fff;
-  font-size:16px;
-  border-bottom:1px dotted #fff;
-  border-radius:0;
-  box-shadow:none!important;
-  height:auto;
+  color: #fff;
+  font-size: 16px;
+  border-bottom: 1px dotted #fff;
+  border-radius: 0;
+  box-shadow: none!important;
+  height: auto;
 }
 
 .formgroup textarea{
   border:none;
   background-color: rgba(255, 255, 255, 0)!important;
   background: rgba(255, 255, 255, 0);
-  color:#fff;
-  font-size:16px;
-  border-bottom:1px dotted #fff;
-  border-radius:0;
-  box-shadow:none!important;
-  height:auto;
+  color: #fff;
+  font-size: 16px;
+  border-bottom: 1px dotted #fff;
+  border-radius: 0;
+  box-shadow: none!important;
+  height: auto;
 }
 
 .btn{
 /*    color:#fff;*/
-    border-color:#fff;
+    border-color: #fff;
 }
 .btn:hover{
-  background:rgba(225, 225, 225, 0.3);
-  color:#fff;
-  border-color:#fff;
+  background: rgba(225, 225, 225, 0.3);
+  color: #fff;
+  border-color: #fff;
 }
 
 /*header h2 {
@@ -263,7 +263,7 @@ header {
   text-align: right;
   color: #FFFFFF;
 }
-#logout a:hover {
+#logout a:hover { /*possible error*/
   color: #3FBFBD;
 }
 
@@ -277,7 +277,7 @@ header {
 }
 
 .linkwhite {
-  color:white;
+  color: white;
 }
 
 /*-----ABOUT US PAGE-------*/
@@ -312,7 +312,7 @@ div.img img {
 }
 
 div.img a:hover img {
-    border:1px solid #0000ff;
+    border: 1px solid #0000ff;
 }
 
 div.desc {
@@ -333,8 +333,6 @@ div .projectHeader {
   text-align: center;
   border-bottom: 2px;
   border-bottom-style: dotted;
-
-
 }
 
 div .projectText {
