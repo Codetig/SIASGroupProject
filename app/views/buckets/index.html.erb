@@ -11,8 +11,8 @@
 
 <div id="background-block">
 
-<h2 class="name-bucket"><%= @user.first_name %>'s Music Buckets</h2>
-
+<h2 class="name-bucket" id="your-name"><%= @user.first_name %>'s Music Buckets</h2>
+<br>
 <div class="container">
   <div class="col-sm-11 col-sm-offset-1">
 
@@ -33,7 +33,7 @@
     <% @buckets.each do |bucket| %>
     <% tracks = bucket.tracks %>
     <% playlist = tracks.map{|track| track.spotify_track_id} %>
-    <div class="col-sm-3 thumbnail bucketbox text-center"><%= link_to bucket.name, bucket_path(bucket) %> <br>
+    <div class="col-sm-3 thumbnail bucketbox text-center" ><%= link_to bucket.name, bucket_path(bucket) %> <br>
       <% if playlist.length > 0 %>
       <div><a href="#" class='glyphicon glyphicon-play-circle play-all circleplay' aria-hidden='true'></a>
         <iframe src="https://embed.spotify.com/?uri=spotify:trackset:<%= bucket.name %>List:<%= playlist.join(',') %>" width="250" height="80" frameborder="0" allowtransparency="true"></iframe></div>

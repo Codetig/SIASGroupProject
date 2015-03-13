@@ -226,7 +226,7 @@ nav a {
 
 
 header {
-  margin: 0 0 60px 0;
+  margin: 0 0 35px 0;
 }
 
 
@@ -335,5 +335,15 @@ div .projectText {
   margin-left: 6px;
 }
 
+#your-name {
+  font-family: 'Pacifico', cursive;
+  color: white;
+  text-align: center;
+}
 
+#your-bucket {
+  font-family: 'Pacifico', cursive;
+  color: white;
+  text-align: center;
+}
 
