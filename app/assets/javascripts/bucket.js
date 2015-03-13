@@ -19,6 +19,7 @@ $(document).ready(function(){
   }); //end of add-link click
 
   $('.play-all').on('click',function (e) {
+    e.preventDefault();
   $(this).parent().find('iframe').toggle();
   }); //end of play all
 
