@@ -146,7 +146,7 @@ nav a {
 }
 
 #results {
-  height:400px;
+  height: 400px;
   width: auto;
   overflow-y: auto;
   font-color: white;
@@ -189,37 +189,39 @@ nav a {
 
 
 .formgroup input{
-  border:none;
+  border: none;
   background-color: rgba(255, 255, 255, 0)!important;
   /*background: rgba(255, 255, 255, 0);*/
-  color:#fff;
-  font-size:16px;
-  border-bottom:1px dotted #fff;
-  border-radius:0;
-  box-shadow:none!important;
-  height:auto;
+  color: #fff;
+  font-size: 16px;
+  border-bottom: 1px dotted #fff;
+  border-radius: 0;
+  box-shadow: none!important;
+  height: auto;
 }
 
 .formgroup textarea{
   border:none;
   background-color: rgba(255, 255, 255, 0)!important;
   background: rgba(255, 255, 255, 0);
-  color:#fff;
-  font-size:16px;
-  border-bottom:1px dotted #fff;
-  border-radius:0;
-  box-shadow:none!important;
-  height:auto;
+  color: #fff;
+  font-size: 16px;
+  border-bottom: 1px dotted #fff;
+  border-radius: 0;
+  box-shadow: none!important;
+  height: auto;
 }
 
-.btn{
-/*    color:#fff;*/
+.btn { 
+
   border-color:#fff;
+
 }
+
 .btn:hover{
-  background:rgba(225, 225, 225, 0.3);
-  color:#fff;
-  border-color:#fff;
+  background: rgba(225, 225, 225, 0.3);
+  color: #fff;
+  border-color: #fff;
 }
 
 
@@ -240,7 +242,7 @@ header {
 #name-bucket {
   font-family: 'Pacifico', cursive;
   text-align: center;
-  color: red;
+  color: white;
   margin-top: -55px;
   padding-bottom: 35px;
 }
@@ -249,7 +251,7 @@ header {
   text-align: right;
   color: #FFFFFF;
 }
-#logout a:hover {
+#logout a:hover { /*possible error*/
   color: #3FBFBD;
 }
 
@@ -263,7 +265,7 @@ header {
 }*/
 
 .linkwhite {
-  color:white;
+  color: white;
 }
 
 /*-----ABOUT US PAGE-------*/
@@ -298,7 +300,7 @@ div.img img {
 }
 
 div.img a:hover img {
-    border:1px solid #0000ff;
+    border: 1px solid #0000ff;
 }
 
 div.desc {
@@ -319,8 +321,6 @@ div .projectHeader {
   text-align: center;
   border-bottom: 2px;
   border-bottom-style: dotted;
-
-
 }
 
 div .projectText {
