@@ -36,12 +36,14 @@ $('iframe').hide(); //hiding iframes
   //Ife's changed listener
   //using the artist and title functions define at the top in the events below
  $('#results ul').on('click', '#play',function (e) { 
+  e.preventDefault();
   currentPreview? currentPreview.pause() : null; //to prevent multiple songs from playing
   currentPreview = audioObject[title($(this))+artist($(this))]; 
   // console.log(audioObject);
   currentPreview.play(); 
  });
  $('#results ul').on('click', '#pause',function (e) { 
+  e.preventDefault();
   // console.log('audioObject:',audioObject);
   audioObject[title($(this))+artist($(this))].pause();
  });     
@@ -68,6 +70,7 @@ $('iframe').hide(); //hiding iframes
   });
 
   $('.playbtn').on('click',function (e) {
+    e.preventDefault();
       $('iframe').hide(); //hiding iframes
       
       if($(this).text() === "Hide"){
@@ -83,6 +86,7 @@ $('iframe').hide(); //hiding iframes
    });
 
   $('#play-all').on('click',function (e) {
+    e.preventDefault();
     $(this).parent().find('iframe').toggle();
   }); //end of play all
 
