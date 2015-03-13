@@ -1,34 +1,45 @@
-# require "rails_helper"
+require "rails_helper"
 
-# feature "User creates a new bucket" do 
+feature "User creates a new bucket" do 
 
-#   scenario "create bucket with valid name" do
-#     #setup
-#     #set user by logging in
+  scenario "create bucket with valid name" do
+    #setup
+    #set user by logging in
+      visit root_path
+      click_link "here"
+      click_link "Experience as Guest"
 
-#     #excercise
-#     click_button "+"
-#     fill_in "Name:", with: "Testy"
-#     fill_in "Description:", with: "Just testing this"
-#     click_button "Add Bucket"
 
-#     #verify
-#     expect(page).to have_content("New bucket created")
-#     expect(page).to have_content("Testy")
-#   end
+    #excercise
+    click_link "+"
+    fill_in "Name", with: "Testy"
+    fill_in "Description", with: "Just testing this"
+    click_button "Add Bucket"
 
-#   scenario "create bucket with without name" do
-#     #setup
-#     #set user by logging in
+    #verify
+    expect(page).to have_content("New bucket created")
+    expect(page).to have_content("Testy")
+  end
 
-#     #excercise
-#     click_button "+"
-#     fill_in "Name:", with: ""
-#     fill_in "Description:", with: "Just testing this"
-#     click_button "Add Bucket"
+  scenario "create bucket with without name" do
+    #setup
+    #set user by logging in
+    visit root_path
+    click_link "here"
+    click_link "Experience as Guest"
 
-#     #verify
-#     expect(page).to have_content("No bucket was created: A bucket must have a name")
-#   end
+    #excercise
+    click_link "+"
+    fill_in "Name", with: ""
+    fill_in "Description", with: "Just testing this"
+    click_button "Add Bucket"
+
+    #verify
+    expect(page).to have_content("No bucket was created: A bucket must have a name")
+  end
+
+  # def login_as_guest_user do
+
+  # end
   
-# end
+end

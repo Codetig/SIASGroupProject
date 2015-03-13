@@ -19,7 +19,7 @@
   <div class="row">
 
 
-    <div class="col-sm-3 thumbnail bucketbox text-center"><span class="add-link"><%= link_to "+", user_buckets_path(@user) %></span><p><small><%= link_to "Create Bucket", user_buckets_path(@user), class: "add"%></small></p>
+    <div class="col-sm-3 thumbnail bucketbox text-center"><span class="add-link"><%= link_to "+", user_buckets_path(@user) %></span><p><small>Create Bucket</small></p>
 
     <div id="add-form" class="overlay">
       <%= form_for Bucket.new, :url => user_buckets_path(@user) do |f| %>
@@ -37,6 +37,8 @@
       <% if playlist.length > 0 %>
       <div><a href="#" class='glyphicon glyphicon-play-circle play-all circleplay' aria-hidden='true'></a>
         <iframe src="https://embed.spotify.com/?uri=spotify:trackset:<%= bucket.name %>List:<%= playlist.join(',') %>" width="250" height="80" frameborder="0" allowtransparency="true"></iframe></div>
+        <% else %>
+        <p style="color:black; font-size:16px">Add songs</p>
         <% end %>
         <small><%= link_to "Edit |", user_buckets_path(@user), class: "edit" %>  <%= link_to " Delete", bucket_path(bucket), :method => :delete, data: { confirm: "Delete #{bucket.name}; are you sure?" }, class: "edit" %></small>
       <div class="edit-form overlay" aria-hidden="true">

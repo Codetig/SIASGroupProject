@@ -1,8 +1,8 @@
 require "rails_helper"
-
+#need the selenium gem to make this work
 feature "Visitor plays media on root/site-index" do
   
-  scenario "clicks on happy-bucket play-link" do
+  scenario "clicks on happy-bucket play-link", :js => true do
     #setup
     visit root_path
 
@@ -10,10 +10,10 @@ feature "Visitor plays media on root/site-index" do
     page.first("#happy").click
     
     #verify
-    expect(find("#happy")[:class] == "glyphicon glyphicon-play-circle circleplay").to be true 
+    expect(find("#happy")[:class] == "glyphicon glyphicon-pause circleplay").to be true 
   end
 
-  scenario "clicks on edgy-bucket play-link" do
+  scenario "clicks on edgy-bucket play-link", :js => true do
     #setup
     visit root_path
 
@@ -21,10 +21,10 @@ feature "Visitor plays media on root/site-index" do
     find("#edgy").click
     
     #verify
-    expect(find('#edgy')[:class] == "glyphicon glyphicon-play-circle circleplay ").to be true
+    expect(find('#edgy')[:class] == "glyphicon glyphicon-pause circleplay ").to be true
   end
 
-  scenario "clicks on nostalgic-bucket play-link" do
+  scenario "clicks on nostalgic-bucket play-link", :js => true do
     #setup
     visit root_path
 
@@ -32,6 +32,6 @@ feature "Visitor plays media on root/site-index" do
     find("#nost").click
     
     #verify
-    expect(find('#nost')[:class] == "glyphicon glyphicon-play-circle circleplay ").to be true
+    expect(find('#nost')[:class] == "glyphicon glyphicon-pause circleplay ").to be true
   end
 end

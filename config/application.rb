@@ -30,7 +30,7 @@ module SIASGroupProject
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
-    config.serve_static_assets = true
+    config.serve_static_files = true
     config.action_mailer.default_url_options = { host: 'localhost: 3000'}
     # config.assets.precompile += ['tracks.js.erb']
     config.assets.paths << "#{Rails.root}/app/public/videos"

@@ -39,7 +39,7 @@ class BucketsController < ApplicationController
     @user = User.find(params[:user_id])
     @bucket.user = @user
     if @bucket.save
-      redirect_to :back, notice: "New bucket created"
+      redirect_to :back, notice: "New bucket created. Click bucket name to add songs"
     else
       redirect_to :back, notice: "No bucket was created: A bucket must have a name"
     end

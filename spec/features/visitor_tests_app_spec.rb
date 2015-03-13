@@ -9,7 +9,7 @@
 # end
 
 #   before(:each) do
-#     valid_facebook_login_setup
+#     valid_facebook_login_setup do
 #     get "auth/facebook/callback"
 #     request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:facebook]
 #   end
@@ -18,8 +18,8 @@
 #     expect(session[:user_id]).to eq(User.last.id)
 #   end
 
-#   it "should redirect to root" do
-#     expect(response).to redirect_to root_path
+#   it "should redirect to buckets index" do
+#     expect(response).to redirect_to user_buckets_path(@user)
 #   end
 # end
 
