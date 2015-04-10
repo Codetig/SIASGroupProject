@@ -1,8 +1,10 @@
 class BucketsController < ApplicationController
   before_action :check_login, :require_user
+
   def index
     @user = User.find(params[:user_id])
-
+    # binding.pry
+    redirect_to root_path notice: "permission denied" unless @user.id == session[:user_id]
     unless @user.first_name
     @user.first_name = @user.name.split(" ")[0]
     @user.last_name = @user.name.split(" ")[1]
@@ -23,9 +25,11 @@ class BucketsController < ApplicationController
   end
 
   def show
+
     @bucket = Bucket.find params[:id]
     @tracks = @bucket.tracks.order(play_count: :desc)
     @user = @bucket.user
+    redirect_to root_path notice: "permission denied" unless @user.id == session[:user_id]
     unless @user.first_name
     @user.first_name = @user.name.split(" ")[0]
     @user.last_name = @user.name.split(" ")[1]
